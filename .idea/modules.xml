@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Team2Project.iml" filepath="$PROJECT_DIR$/.idea/Team2Project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Formuland.iml" filepath="$PROJECT_DIR$/Formuland.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Team2Project.iml" filepath="$PROJECT_DIR$/Team2Project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
 </project>
