@@ -16,8 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FormulListActivity" />
-        <activity android:name=".MainFormulActivity"></activity>
+        <activity android:name=".FormulsListActivity" />
+        <activity android:name=".MainFormulaActivity"></activity>
     </application>
 
 </manifest>

@@ -8,14 +8,13 @@ import android.view.View
 import kotlinx.android.synthetic.main.activity_formul_list.*
 import kotlinx.android.synthetic.main.formul_row.view.*
 
-class FormulListActivity : AppCompatActivity() {
+class FormulsListActivity : AppCompatActivity() {
 
     fun onItemClick(v : View) {
         v.text_big.text = "Clicked!!!"
 
-        val a = Intent(this, MainFormulActivity::class.java)
+        val a = Intent(this, MainFormulaActivity::class.java)
         startActivity(a)
-//        return a
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +23,6 @@ class FormulListActivity : AppCompatActivity() {
 
 
         list.layoutManager = LinearLayoutManager(this)
-        list.adapter = CustomRecyclerAdapter(Intent(this, MainFormulActivity::class.java))
+        list.adapter = FormulsAdapter()
     }
 }
