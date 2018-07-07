@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(findViewById(R.id.my_toolbar))
 
-//        startActivity(Intent(this, FormulsListActivity::class.java))
+        startActivity(Intent(this, FormulsListActivity::class.java))
 
     }
 
