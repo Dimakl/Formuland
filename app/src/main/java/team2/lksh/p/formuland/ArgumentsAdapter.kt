@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import android.view.View
 import android.support.v7.widget.RecyclerView
 
-class ArgumentsAdapter() : RecyclerView.Adapter<ArgViewHolder>() {
+class ArgumentsAdapter : RecyclerView.Adapter<ArgViewHolder>() {
 
     override fun getItemCount(): Int {
         return 15

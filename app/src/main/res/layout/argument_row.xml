@@ -8,14 +8,13 @@
         android:id="@+id/card"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="3dp"
-        android:onClick="onItemClick"
+        android:layout_marginTop="2dp"
         app:cardBackgroundColor="@android:color/holo_purple"
         app:cardCornerRadius="20dp"
-        app:cardElevation="8dp"
+        app:cardElevation="5dp"
         app:contentPadding="10dp">
 
 
