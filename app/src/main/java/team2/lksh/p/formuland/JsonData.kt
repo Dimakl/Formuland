@@ -65,7 +65,7 @@ fun getExprVars(context: Context, ind: Int): MutableList<Char> {
             mutableListOf()
     for (i in 0 until
             data[ind].expression[0].length) {
-        if (data[ind].expression[0][i] == '$')
+        if (data[ind].expression[0][i] == '@')
             res.add(data[ind].expression[0][i + 1])
     }
     return res
