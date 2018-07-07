@@ -12,7 +12,7 @@ import team2.lksh.p.formuland.adapters.FormulsAdapter
 class FormulsListActivity : AppCompatActivity() {
 
     fun onItemClick(v : View) {
-        v.text_big.text = "Clicked!!!"
+        v.title.text = "Clicked!!!"
 
         val a = Intent(this, MainFormulaActivity::class.java)
         startActivity(a)
@@ -24,7 +24,7 @@ class FormulsListActivity : AppCompatActivity() {
 
 
         list.layoutManager = LinearLayoutManager(this)
-        list.adapter = FormulsAdapter()
+        list.adapter = FormulsAdapter(this)
         
     }
 }

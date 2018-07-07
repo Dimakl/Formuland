@@ -3,6 +3,7 @@ package team2.lksh.p.formuland
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import team2.lksh.p.formuland.parser.FormulaAnalyzer
 
@@ -14,9 +15,10 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(findViewById(R.id.my_toolbar))
 
-        startActivity(Intent(this, FormulsListActivity::class.java))
+        val a = FormulaAnalyzer("@a=3-@b*@c")
+        Log.i("anssss", a.run(hashMapOf("b" to 10.0, "cс" to 5.0)))
 
-        FormulaAnalyzer("@a + @b = 3")
+        startActivity(Intent(this, FormulsListActivity::class.java))
 
     }
 

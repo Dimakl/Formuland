@@ -19,8 +19,6 @@ private fun jsonParse(context: Context): Array<Expression> {
     return data
 }
 
-// test comment for test commit
-
 private class Expression(val name: String,
                          val expression: List<String>,
                          val type: String,
