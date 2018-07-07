@@ -12,6 +12,8 @@ class MainFormulaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_formul)
 
+        val msg = intent.getStringExtra("key")
+
         args.layoutManager = LinearLayoutManager(this)
         args.adapter = ArgumentsAdapter()
     }

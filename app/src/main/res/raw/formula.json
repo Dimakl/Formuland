@@ -7,7 +7,17 @@
       "@c=@a-@b"
     ],
     "type": "math.base",
-    "image": "../images/"
+    "image": "sum3"
+  },
+  {
+    "name": "Вычитание",
+    "expression": [
+      "@a=@b-@c",
+      "@b=@a+@c",
+      "@c=@b-@a"
+    ],
+    "type": "math.base",
+    "image": "min"
   },
   {
     "name": "Произведение",
@@ -17,7 +27,7 @@
       "@c=@a/@b"
     ],
     "type": "math.base",
-    "image": "../images/"
+    "image": "mult"
   },
   {
     "name": "Вычисление корня",
@@ -25,6 +35,6 @@
       "@a=_sqrt(@b)"
     ],
     "type": "math.base",
-    "image": "../images/"
+    "image": "sqrt"
   }
 ]

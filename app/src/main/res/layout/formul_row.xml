@@ -8,7 +8,7 @@
     <android.support.v7.widget.CardView
         android:id="@+id/card"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="100dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="1dp"
@@ -28,7 +28,8 @@
             android:textAlignment="center"
 
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/title"
@@ -37,7 +38,15 @@
             android:layout_height="wrap_content"
             android:text="Some Cool Formula!!!"
             android:textAlignment="viewStart"
-            android:textSize="25sp"
+            android:textSize="30sp"
             android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="250dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="45dp"
+            app:srcCompat="@drawable/sum3" />
     </android.support.v7.widget.CardView>
 </LinearLayout>

@@ -1,6 +1,10 @@
 package team2.lksh.p.formuland.adapters
 
 import android.content.Context
+import android.content.res.AssetManager
+import android.content.res.Resources
+import android.graphics.drawable.Drawable
+import android.support.v4.content.ContextCompat
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.support.v7.widget.RecyclerView
@@ -9,7 +13,7 @@ import kotlinx.android.synthetic.main.formul_row.view.*
 import team2.lksh.p.formuland.R
 import team2.lksh.p.formuland.getMenuData
 
-class FormulsAdapter(activity: Context) : RecyclerView.Adapter<FormulaViewHolder>() {
+class FormulsAdapter(val activity: Context) : RecyclerView.Adapter<FormulaViewHolder>() {
 
     val data = getMenuData(activity, "math.base")
 
@@ -24,6 +28,13 @@ class FormulsAdapter(activity: Context) : RecyclerView.Adapter<FormulaViewHolder
         return FormulaViewHolder(cellForRow)
     }
 
+    fun getDrawable(name : String) : Drawable {
+        val res = activity.resources
+        val resId = res.getIdentifier(name, "drawable", activity.packageName)
+        val draw = res.getDrawable(resId)
+        return draw
+    }
+
     override fun onBindViewHolder(holder: FormulaViewHolder, position: Int) {
         val v = holder.itemView
 
@@ -32,6 +43,10 @@ class FormulsAdapter(activity: Context) : RecyclerView.Adapter<FormulaViewHolder
         holder.index = data.indices[position]
 
         v.title.text = title
+
+        val drawable = getDrawable(imgPath)
+
+        v.img.setImageDrawable(drawable)
         v.small_text.text = imgPath
     }
 }

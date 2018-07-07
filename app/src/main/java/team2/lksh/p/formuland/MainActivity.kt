@@ -16,9 +16,11 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(findViewById(R.id.my_toolbar))
 
         val a = FormulaAnalyzer("@a=3-@b*@c")
-        Log.i("anssss", a.run(hashMapOf("b" to 10.0, "cс" to 5.0)))
+        Log.i("anssss", a.run(hashMapOf("b" to 10.0, "c" to 5.0)))
 
-        startActivity(Intent(this, FormulsListActivity::class.java))
+
+        val intent = Intent(this, FormulsListActivity::class.java)
+        startActivity(intent)
 
     }
 
