@@ -1,0 +1,115 @@
+package team2.lksh.p.formuland.parser
+
+import android.util.Log
+import org.antlr.v4.runtime.CharStreams
+import org.antlr.v4.runtime.CommonTokenStream
+import org.antlr.v4.runtime.tree.ErrorNode
+import kotlin.math.*
+
+class FormulaAnalyzer(function: String) : BaseVisitor<Double?>() {
+
+    private val parserRootCtx = GenParser(CommonTokenStream(GenLexer(CharStreams.fromString(function)))).root()
+    private var variables = hashMapOf<String, Double>()
+    private val functions = hashMapOf<String, (List<Double>)-> Double>(
+            "sin" to {i -> sin(i[0])},
+            "cos" to {i -> cos(i[0])},
+            "tan" to {i -> tan(i[0])},
+            "cot" to {i -> 1 / tan(i[0])},
+            "sqrt" to {i -> sqrt(i[0])},
+            "abs" to {i -> abs(i[0])},
+            "min" to {i -> min(i[0], i[1])},
+            "max" to {i -> max(i[0], i[1])}
+    )
+
+    private val errors = mutableListOf<String>()
+
+    fun run(hashMap: HashMap<String, Double>): String? {
+        errors.clear()
+        this.variables = hashMap
+        return try {
+            visitRoot(parserRootCtx)?.toString() ?: errorsToString()
+        } catch (e : Exception) {
+            errors.add(0,"Error: Wrong input.")
+            Log.d("PRS", "Wrong input")
+            errorsToString()
+        }
+    }
+
+    override fun visitVariable(ctx: GenParser.VariableContext?) : Double?{
+        val name = ctx?.ID()?.text
+        return variables[name]
+    }
+
+    override fun visitExpr(ctx: GenParser.ExprContext?): Double? {
+        if (ctx == null)
+            return null
+        if (ctx.childCount == 1) {
+            when {
+                ctx.variable() != null -> return visitVariable(ctx.variable())
+                ctx.con() != null -> return visitCon(ctx.con())
+                ctx.NUMBER() != null -> return ctx.NUMBER().text.toDoubleOrNull()
+            }
+        }
+        if (ctx.childCount == 2) {
+            when {
+                ctx.MINUS() != null -> {
+                    val res = visitExpr(ctx.expr(0))
+                    return if (res != null) -res else null
+                }
+            }
+        }
+        if (ctx.childCount == 3) {
+            if (ctx.LBR() != null)
+                return visitExpr(ctx.expr(0))
+            val a = visitExpr(ctx.expr(0))
+            val b = visitExpr(ctx.expr(1))
+            if (a == null || b == null)
+                return null
+            when {
+                ctx.PLUS() != null -> return a + b
+                ctx.MINUS() != null -> return a - b
+                ctx.DIV() != null -> {
+                    return if (b != 0.0)
+                        a / b
+                    else {
+                        errors.add("Error: Divide by zero.")
+                        Log.e("PRS", "Divide by zero")
+                        null
+                    }
+
+                }
+                ctx.MULT() != null -> return a * b
+                ctx.CAP() != null -> return a.pow(b)
+            }
+        }
+        if (ctx.func() != null) {
+            if (!functions.containsKey(ctx.func().ID().toString())) {
+                errors.add("Error: Function ${ctx.func().ID()} doesn't exist.")
+                Log.e("PRS", "Function ${ctx.func().ID()} doesn't exist.")
+                return null
+            }
+            val args = mutableListOf<Double>()
+            ctx.expr().forEach {args.add(visitExpr(it) ?: return null)}
+            return try {
+                functions[ctx.func().ID().toString()]?.invoke(args)
+            } catch (e : ArithmeticException) {
+                errors.add("Error: Arithmetic exception in function.")
+                Log.e("PRS", "Arithmetic exception")
+                null
+            }
+        }
+        return null
+    }
+
+    override fun visitErrorNode(node: ErrorNode?): Double? {
+        errors.add("Error: Wrong input.")
+        Log.e("PRS", "Wrong input")
+        return super.visitErrorNode(node)
+    }
+
+    private fun errorsToString() : String{
+        var res = ""
+        errors.map { res += "$it\n" }
+        return res
+    }
+}
