@@ -4,6 +4,7 @@ import android.content.Context
 import com.google.gson.Gson
 import java.io.*
 
+
 private fun jsonParse(context: Context): Array<Expression> {
     val gson = Gson()
 
@@ -19,13 +20,21 @@ private fun jsonParse(context: Context): Array<Expression> {
     return data
 }
 
-// test comment for test commit
 
 private class Expression(val name: String,
                          val expression: List<String>,
                          val type: String,
                          val image: String)
 
+
+class JsonData {
+
+    companion object {
+        // const String data types
+        val mathBase = "math.base"
+    }
+
+}
 
 class MenuData(val names: List<String>,
                val images: List<String>,

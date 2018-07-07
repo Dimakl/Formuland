@@ -11,47 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4343c8ae-bc8d-40f2-9731-6f6249b1f903" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/team2/lksh/p/formuland/FormulsListActivity.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/team2/lksh/p/formuland/MainFormulaActivity.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/team2/lksh/p/formuland/adapters/ArgumentsAdapter.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/team2/lksh/p/formuland/adapters/CustomGridAdapter.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/team2/lksh/p/formuland/adapters/FormulsAdapter.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/team2/lksh/p/formuland/parser/BaseVisitor.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/team2/lksh/p/formuland/parser/GenLexer.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/team2/lksh/p/formuland/parser/GenParser.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/team2/lksh/p/formuland/parser/IVisitor.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/team2/lksh/p/formuland/parser/Parser.kt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/team2/lksh/p/formuland/parser/g.g4" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/team2/lksh/p/formuland/parser/g.tokens" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/team2/lksh/p/formuland/parser/gLexer.tokens" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/libs/antlr-runtime-4.7.1.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_menu_camera.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_menu_gallery.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_menu_manage.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_menu_send.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_menu_share.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_menu_slideshow.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_search_black_24dp.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_formul_list.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main_formul.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/argument_row.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/formul_row.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/menu/toolbar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/team2/lksh/p/formuland/JsonData.kt" afterPath="$PROJECT_DIR$/app/src/main/java/team2/lksh/p/formuland/JsonData.kt" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/team2/lksh/p/formuland/MainActivity.kt" afterPath="$PROJECT_DIR$/app/src/main/java/team2/lksh/p/formuland/MainActivity.kt" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/raw/formula.json" afterPath="$PROJECT_DIR$/app/src/main/res/raw/formula.json" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -75,11 +36,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="JsonData.kt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="JsonData.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/team2/lksh/p/formuland/JsonData.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="25" column="42" lean-forward="true" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
+            <state relative-caret-position="370">
+              <caret line="36" column="1" lean-forward="true" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
               <folding>
                 <element signature="e#32#107#0" expanded="true" />
               </folding>
@@ -87,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainActivity.kt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainActivity.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/team2/lksh/p/formuland/MainActivity.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+            <state relative-caret-position="396">
+              <caret line="28" column="32" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding>
                 <element signature="e#32#216#0" expanded="true" />
               </folding>
@@ -2910,6 +2871,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/team2/lksh/p/formuland/MainActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="28" column="32" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <element signature="e#32#216#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/team2/lksh/p/formuland/FormulsListActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -2928,20 +2899,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/team2/lksh/p/formuland/JsonData.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="25" column="42" lean-forward="true" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
+        <state relative-caret-position="370">
+          <caret line="36" column="1" lean-forward="true" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
           <folding>
             <element signature="e#32#107#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/team2/lksh/p/formuland/MainActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-          <folding>
-            <element signature="e#32#216#0" expanded="true" />
           </folding>
         </state>
       </provider>
