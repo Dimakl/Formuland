@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import kotlinx.android.synthetic.main.activity_formul_list.*
 import kotlinx.android.synthetic.main.formul_row.view.*
+import team2.lksh.p.formuland.adapters.FormulsAdapter
 
 class FormulsListActivity : AppCompatActivity() {
 

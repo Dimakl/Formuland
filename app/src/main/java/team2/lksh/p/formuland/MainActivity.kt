@@ -4,6 +4,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import team2.lksh.p.formuland.parser.FormulaAnalyzer
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,6 +15,8 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(findViewById(R.id.my_toolbar))
 
         startActivity(Intent(this, FormulsListActivity::class.java))
+
+        FormulaAnalyzer("@a + @b = 3")
 
     }
 
