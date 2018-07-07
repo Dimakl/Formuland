@@ -25,5 +25,6 @@ class FormulsListActivity : AppCompatActivity() {
 
         list.layoutManager = LinearLayoutManager(this)
         list.adapter = FormulsAdapter()
+        
     }
 }
