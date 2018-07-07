@@ -50,6 +50,8 @@ class MenuData(val names: List<String>,
  *
  * getExpr() returns list of all expressions in Strings
  *
+ * getImage() returns image name in String format
+ *
  **/
 
 fun getMenuData(context: Context, type: String): MenuData {
@@ -66,6 +68,8 @@ fun getMenuData(context: Context, type: String): MenuData {
     }
     return MenuData(names, images, indices)
 }
+
+fun getImage(context: Context, id: Int): String = jsonParse(context)[id].image
 
 fun getExprVars(context: Context, ind: Int): List<String> {
     val data = jsonParse(context)
