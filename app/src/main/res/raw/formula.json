@@ -1,43 +1,30 @@
-{
-  "math": [
-    [
-      {
-        "name": "Сумма",
-        "expression": [
-          "$a=$b+$c",
-          "$b=$a-$c",
-          "$c=$a-$b"
-        ],
-        "variables": [
-          "a","b","c"
-        ],
-        "image": "../images/"
-      },
-      {
-        "name": "Произведение",
-        "expression": [
-          "$a=$b*$c",
-          "$b=$a/$c",
-          "$c=$a/$b"
-        ],
-        "variables": [
-          "a","b","c"
-        ],
-        "image": "../images/"
-      },
-      {
-        "name": "Вычисление корня",
-        "expression": [
-          "$a=sqrt($b)"
-        ],
-        "variables": [
-          "a","b"
-        ],
-        "image": "../images/"
-      }
-    ]
-  ],
-  "mathTypes": [
-    "Базовая математика"
-  ]
-}
+[
+  {
+    "name": "Сумма",
+    "expression": [
+      "$a=$b+$c",
+      "$b=$a-$c",
+      "$c=$a-$b"
+    ],
+    "type": "math.base",
+    "image": "../images/"
+  },
+  {
+    "name": "Произведение",
+    "expression": [
+      "$a=$b*$c",
+      "$b=$a/$c",
+      "$c=$a/$b"
+    ],
+    "type": "math.base",
+    "image": "../images/"
+  },
+  {
+    "name": "Вычисление корня",
+    "expression": [
+      "$a=sqrt($b)"
+    ],
+    "type": "math.base",
+    "image": "../images/"
+  }
+]
