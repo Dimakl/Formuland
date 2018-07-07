@@ -1,4 +1,4 @@
-// Generated from /home/dsl/AndroidStudioProjects/MyApplication/app/src/main/java/com/example/dsl/myapplication/g.g4 by ANTLR 4.7
+// Generated from /home/dsl/AndroidStudioProjects/Team2Project/app/src/main/java/team2/lksh/p/formuland/parser/g.g4 by ANTLR 4.7
 package team2.lksh.p.formuland.parser;
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
@@ -33,7 +33,7 @@ public class GenLexer extends Lexer {
 	};
 
 	private static final String[] _LITERAL_NAMES = {
-		null, null, "'+'", "'-'", "'*'", "'/'", "'('", "')'", null, "'_'", "'$'", 
+		null, null, "'+'", "'-'", "'*'", "'/'", "'('", "')'", null, "'_'", "'@'", 
 		"'&'", "'.'", "','", "'='", "'^'"
 	};
 	private static final String[] _SYMBOLIC_NAMES = {
@@ -116,7 +116,7 @@ public class GenLexer extends Lexer {
 		"\61\20\3\2\2\2\62\64\t\3\2\2\63\62\3\2\2\2\64\65\3\2\2\2\65\63\3\2\2\2"+
 		"\65\66\3\2\2\2\66=\3\2\2\2\679\7\60\2\28:\t\3\2\298\3\2\2\2:;\3\2\2\2"+
 		";9\3\2\2\2;<\3\2\2\2<>\3\2\2\2=\67\3\2\2\2=>\3\2\2\2>\22\3\2\2\2?@\7a"+
-		"\2\2@\24\3\2\2\2AB\7&\2\2B\26\3\2\2\2CD\7(\2\2D\30\3\2\2\2EF\7\60\2\2"+
+		"\2\2@\24\3\2\2\2AB\7B\2\2B\26\3\2\2\2CD\7(\2\2D\30\3\2\2\2EF\7\60\2\2"+
 		"F\32\3\2\2\2GH\7.\2\2H\34\3\2\2\2IJ\7?\2\2J\36\3\2\2\2KL\7`\2\2L \3\2"+
 		"\2\2\7\2$\65;=\2";
 	public static final ATN _ATN =

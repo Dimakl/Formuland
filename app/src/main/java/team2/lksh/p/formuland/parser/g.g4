@@ -24,7 +24,7 @@ LBR:   '(';
 RBR:   ')';
 NUMBER: [0-9]+('.' [0-9]+)?;
 UNDL:  '_';
-DOLL:  '$';
+DOLL:  '@';
 AND:   '&';
 DOT:   '.';
 COMMA: ',';
