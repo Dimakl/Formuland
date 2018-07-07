@@ -36,7 +36,7 @@ class MenuData(val names: List<String>,
  * getMenuData() returns MenuData object:
  * List of names, images, indices
  *
- * getExprVars() returns list of 1-symbol variables (Char type)
+ * getExprVars() returns list of 1-symbol variables (String type)
  *
  * getExpr() returns list of all expressions in Strings
  *
@@ -57,16 +57,22 @@ fun getMenuData(context: Context, type: String): MenuData {
     return MenuData(names, images, indices)
 }
 
-fun getExprVars(context: Context, ind: Int): MutableList<Char> {
+fun getExprVars(context: Context, ind: Int): List<String> {
     val data = jsonParse(context)
-    val res: MutableList<Char> =
-            mutableListOf()
-    for (i in 0 until
-            data[ind].expression[0].length) {
-        if (data[ind].expression[0][i] == '$')
-            res.add(data[ind].expression[0][i + 1])
+    val res: MutableSet<String> = mutableSetOf()
+    var i = 0
+    val expr = data[ind].expression[0]
+    while (i < expr.length) {
+        if (expr[i] == '@') {
+            var variable = ""
+            while (expr[i] != '@') {
+                variable += data[ind].expression[0]
+                i++
+            }
+        }
+        i++
     }
-    return res
+    return res.toList()
 }
 
 fun getExpr(context: Context, ind: Int): List<String> {
