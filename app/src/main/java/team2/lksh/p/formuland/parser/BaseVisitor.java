@@ -1,4 +1,4 @@
-// Generated from /home/dsl/AndroidStudioProjects/MyApplication/app/src/main/java/com/example/dsl/myapplication/g.g4 by ANTLR 4.7
+// Generated from /home/dsl/AndroidStudioProjects/Team2Project/app/src/main/java/team2/lksh/p/formuland/parser/g.g4 by ANTLR 4.7
 package team2.lksh.p.formuland.parser;
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 

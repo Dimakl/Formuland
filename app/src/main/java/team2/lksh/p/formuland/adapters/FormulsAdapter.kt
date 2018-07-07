@@ -1,11 +1,11 @@
-package team2.lksh.p.formuland.adapters
+package team2.lksh.p.formuland
 
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.view.View
 import android.support.v7.widget.RecyclerView
-import team2.lksh.p.formuland.R
+import team2.lksh.p.formuland.adapters.ArgViewHolder
 
 class FormulsAdapter : RecyclerView.Adapter<ArgViewHolder>() {
 

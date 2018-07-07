@@ -2,9 +2,9 @@
   {
     "name": "Сумма",
     "expression": [
-      "$a=$b+$c",
-      "$b=$a-$c",
-      "$c=$a-$b"
+      "@a=@b+@c",
+      "@b=@a-@c",
+      "@c=@a-@b"
     ],
     "type": "math.base",
     "image": "../images/"
@@ -12,9 +12,9 @@
   {
     "name": "Произведение",
     "expression": [
-      "$a=$b*$c",
-      "$b=$a/$c",
-      "$c=$a/$b"
+      "@a=@b*@c",
+      "@b=@a/@c",
+      "@c=@a/@b"
     ],
     "type": "math.base",
     "image": "../images/"
@@ -22,7 +22,7 @@
   {
     "name": "Вычисление корня",
     "expression": [
-      "$a=sqrt($b)"
+      "@a=_sqrt(@b)"
     ],
     "type": "math.base",
     "image": "../images/"
