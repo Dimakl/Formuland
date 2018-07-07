@@ -12,9 +12,9 @@
   {
     "name": "Вычитание",
     "expression": [
-      "@a=@b-@c",
-      "@b=@a+@c",
-      "@c=@b-@a"
+      "@a@=@b@-@c@",
+      "@b@=@a@+@c@",
+      "@c@=@b@-@a@"
     ],
     "type": "math.base",
     "image": "min"
