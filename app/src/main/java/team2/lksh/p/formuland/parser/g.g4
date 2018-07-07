@@ -13,7 +13,7 @@ expr : MINUS expr
 
 func : UNDL ID;
 con : AND ID;
-variable : DOLL ID;
+variable : DOLL ID DOLL;
 
 ID: [a-zA-Z]+;
 PLUS:  '+';
