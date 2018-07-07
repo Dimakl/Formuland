@@ -20,7 +20,7 @@
         android:onClick="onItemClick">
 
         <TextView
-            android:id="@+id/formula"
+            android:id="@+id/small_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="35dp"
@@ -31,7 +31,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/text_big"
+            android:id="@+id/title"
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

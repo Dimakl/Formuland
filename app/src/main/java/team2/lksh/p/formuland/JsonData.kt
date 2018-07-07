@@ -20,7 +20,6 @@ private fun jsonParse(context: Context): Array<Expression> {
     return data
 }
 
-
 private class Expression(val name: String,
                          val expression: List<String>,
                          val type: String,
