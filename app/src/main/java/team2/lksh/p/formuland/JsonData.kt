@@ -12,7 +12,7 @@ class JsonDataProcessor(private val context: Context) {
     private lateinit var const: Array<Const>
     init {
         data = jsonParse(R.raw.formula, Array<Expression>::class)
-        const = jsonParse(R.raw.const, Array<Const>::class)
+        const = jsonParse(R.raw.constant, Array<Const>::class)
     }
 
     private fun <T : Any> jsonParse(res: Int, clazz: KClass<Array<T>>): Array<T> {

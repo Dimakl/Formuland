@@ -24,6 +24,7 @@ class MainFormulaActivity : AppCompatActivity() {
 
     lateinit var adapter : ArgumentsAdapter
     var formulaId = -1
+    val jsonData = JsonDataProcessor(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,13 +32,13 @@ class MainFormulaActivity : AppCompatActivity() {
 
         formulaId = intent.getStringExtra("id").toInt()
 
-        val menuData = getMenuData(this, JsonData.mathBase)
+        val menuData = jsonData.getMenuData(JsonData.mathBase)
 
         val index = findElem(formulaId, menuData.idList)
 
         val name = menuData.names[index]
         val imgName = menuData.images[index]
-        val vars = getExprVars(this, index)
+        val vars = jsonData.getExprVars(index)
 
         img_formula.setImageDrawable(getImgDrawable(this, imgName))
 
@@ -69,7 +70,7 @@ class MainFormulaActivity : AppCompatActivity() {
             }
         }
 
-        val a = FormulaAnalyzer(getExpr(this, formulaId).toMutableList())
+        val a = FormulaAnalyzer(jsonData.getExpr(formulaId).toMutableList())
 
         val res = a.run(pares, unknownVar)
 
