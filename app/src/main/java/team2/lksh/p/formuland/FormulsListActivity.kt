@@ -31,7 +31,7 @@ class FormulsListActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        getMenuInflater().inflate(R.menu.main_menu, menu);
+        menuInflater.inflate(R.menu.main_menu, menu)
         return true
     }
 }

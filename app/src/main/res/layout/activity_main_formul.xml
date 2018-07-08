@@ -19,7 +19,8 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         style="@style/MyStyle"
         android:background="@color/colorAccent2"
-        app:titleTextColor="@color/white"/>
+        app:titleTextColor="@color/white"
+        app:title=""/>
 
     <ImageView
         android:id="@+id/img_formula"
