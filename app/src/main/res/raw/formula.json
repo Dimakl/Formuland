@@ -3,11 +3,11 @@
     "name": "Сумма",
     "expression": [
       "@a@=@b@+@c@",
-      "@b=@a@-@c@",
+      "@b@=@a@-@c@",
       "@c@=@a@-@b@"
     ],
     "type": "math.base",
-    "image": "sum3"
+    "image": "sum4"
   },
   {
     "name": "Вычитание",
@@ -32,7 +32,8 @@
   {
     "name": "Вычисление корня",
     "expression": [
-      "@a@=_sqrt(@b@)"
+      "@a@=_sqrt(@b@)",
+      "@b@=a^2"
     ],
     "type": "math.base",
     "image": "sqrt"

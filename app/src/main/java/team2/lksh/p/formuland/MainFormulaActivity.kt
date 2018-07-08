@@ -24,13 +24,15 @@ class MainFormulaActivity : AppCompatActivity() {
 
     lateinit var adapter : ArgumentsAdapter
     var formulaId = -1
-    val jsonData = JsonDataProcessor(this)
+    private lateinit var jsonData : JsonDataProcessor
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_formul)
 
         formulaId = intent.getStringExtra("id").toInt()
+
+        jsonData = JsonDataProcessor(this)
 
         val menuData = jsonData.getMenuData(JsonData.mathBase)
 
