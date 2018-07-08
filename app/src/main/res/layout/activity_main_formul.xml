@@ -20,7 +20,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/mult" />
+        app:srcCompat="@drawable/mult"
+        android:contentDescription="@string/formula" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/args"
@@ -31,9 +32,7 @@
         app:layout_constraintBottom_toTopOf="@+id/answer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_formula">
-
-    </android.support.v7.widget.RecyclerView>
+        app:layout_constraintTop_toBottomOf="@+id/img_formula"/>
 
     <TextView
         android:id="@+id/answer"
@@ -42,11 +41,11 @@
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:text="TextView"
+        android:text="@string/answer"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/calc_btn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <Button
         android:id="@+id/calc_btn"
@@ -56,10 +55,11 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="2dp"
         android:onClick="onCalculate"
-        android:text="Calculate"
+        android:text="@string/calculate"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        style="@style/Theme.AppCompat.Light.NoActionBar"/>
 
 </android.support.constraint.ConstraintLayout>
