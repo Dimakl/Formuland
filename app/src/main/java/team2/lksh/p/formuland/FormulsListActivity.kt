@@ -13,7 +13,7 @@ import team2.lksh.p.formuland.adapters.FormulsAdapter
 
 class FormulsListActivity : AppCompatActivity() {
 
-    fun onItemClick(v : View) {
+    fun onFormulaClick(v : View) {
 
         val a = Intent(this, MainFormulaActivity::class.java)
         a.putExtra("id", v.pos_text.text)

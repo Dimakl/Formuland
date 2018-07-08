@@ -19,28 +19,10 @@
         app:contentPadding="10dp"
         android:onClick="onFormulaClick">
 
-        <ImageView
-            android:id="@+id/img"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ftrs" />
-
         <TextView
             android:id="@+id/pos_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="gone" />
-
-        <TextView
-            android:id="@+id/pos_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
-            android:text="ax^^2 + bx + c"
-            android:textAlignment="center"
-
-            android:textSize="20sp"
-            android:textStyle="bold"
             android:visibility="gone" />
 
         <TextView

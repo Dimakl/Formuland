@@ -72,7 +72,7 @@ class MainFormulaActivity : AppCompatActivity() {
             }
         }
 
-        val a = FormulaAnalyzer(jsonData.getExpr(formulaId).toMutableList())
+        val a = FormulaAnalyzer(jsonData.getExpr(formulaId).toMutableList(),jsonData)
 
         val res = a.run(pares, unknownVar)
 
