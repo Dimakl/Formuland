@@ -32,10 +32,11 @@ class MainFormulaActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main_formul)
 
         formulaId = intent.getStringExtra("id").toInt()
+        val subj = intent.getStringExtra("subject")
 
         jsonData = JsonDataProcessor(this)
 
-        val menuData = jsonData.getMenuData(JsonData.mathBase)
+        val menuData = jsonData.getMenuData(subj)
 
         val index = findElem(formulaId, menuData.idList)
 

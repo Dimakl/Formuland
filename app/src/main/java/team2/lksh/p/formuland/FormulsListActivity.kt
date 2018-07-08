@@ -17,10 +17,13 @@ class FormulsListActivity : AppCompatActivity() {
 
     private val subjectList = listOf("Mathematics", "Physics", "Chemistry")
 
+    var currentSubject = JsonData.mathBase
+
     fun onFormulaClick(v : View) {
 
         val a = Intent(this, MainFormulaActivity::class.java)
         a.putExtra("id", v.pos_text.text)
+        a.putExtra("subject", currentSubject)
         startActivity(a)
     }
 
@@ -44,8 +47,13 @@ class FormulsListActivity : AppCompatActivity() {
 
     fun onSectionClick(v : View) {
         when(v.subject.text) {
-            subjectList[0] -> list.adapter = FormulsAdapter(this, JsonData.mathBase)
-            subjectList[1] -> list.adapter = FormulsAdapter(this, JsonData.physicsBase)
+            subjectList[0] -> {
+                list.adapter = FormulsAdapter(this, JsonData.mathBase)
+                currentSubject = JsonData.mathBase}
+            subjectList[1] -> {
+                list.adapter = FormulsAdapter(this, JsonData.physicsBase)
+                currentSubject = JsonData.physicsBase
+            }
         }
     }
 }
