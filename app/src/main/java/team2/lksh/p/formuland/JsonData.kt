@@ -83,6 +83,7 @@ fun getExprVars(context: Context, ind: Int): List<String> {
                 variable += data[ind].expression[0]
                 i++
             }
+           res.add(variable)
         }
         i++
     }
