@@ -12,9 +12,9 @@ import team2.lksh.p.formuland.adapters.FormulsAdapter
 class FormulsListActivity : AppCompatActivity() {
 
     fun onItemClick(v : View) {
-        v.title.text = "Clicked!!!"
 
         val a = Intent(this, MainFormulaActivity::class.java)
+        a.putExtra("index", v.pos_text.text)
         startActivity(a)
     }
 

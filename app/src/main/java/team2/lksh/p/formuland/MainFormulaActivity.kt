@@ -12,7 +12,9 @@ class MainFormulaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_formul)
 
-        val msg = intent.getStringExtra("key")
+        val index = intent.getStringExtra("index").toInt()
+
+        ind_test.text = index.toString()
 
         args.layoutManager = LinearLayoutManager(this)
         args.adapter = ArgumentsAdapter()

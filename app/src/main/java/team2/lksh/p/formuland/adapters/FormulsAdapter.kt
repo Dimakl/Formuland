@@ -47,7 +47,7 @@ class FormulsAdapter(val activity: Context) : RecyclerView.Adapter<FormulaViewHo
         val drawable = getDrawable(imgPath)
 
         v.img.setImageDrawable(drawable)
-        v.small_text.text = imgPath
+        v.pos_text.text = data.indices[position].toString()
     }
 }
 class FormulaViewHolder(v: View) : CustomViewHolder(v) {
