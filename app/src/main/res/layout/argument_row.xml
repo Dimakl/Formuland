@@ -23,6 +23,19 @@
             android:layout_height="match_parent">
 
             <TextView
+                android:id="@+id/pos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/variable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <TextView
                 android:id="@+id/arg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -38,7 +51,7 @@
                 android:layout_height="wrap_content"
 
                 android:hint="argument"
-                android:inputType="numberSigned"
+                android:inputType="numberDecimal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/arg"

@@ -11,11 +11,19 @@ import android.support.v7.widget.RecyclerView
 import android.view.View
 import kotlinx.android.synthetic.main.formul_row.view.*
 import team2.lksh.p.formuland.R
-import team2.lksh.p.formuland.getMenuData
+import team2.lksh.p.formuland.JsonDataProcessor
+
+fun getImgDrawable(activity: Context, name : String) : Drawable {
+    val res = activity.resources
+    val resId = res.getIdentifier(name, "drawable", activity.packageName)
+    val draw = res.getDrawable(resId)
+    return draw
+}
 
 class FormulsAdapter(val activity: Context) : RecyclerView.Adapter<FormulaViewHolder>() {
 
-    val data = getMenuData(activity, "math.base")
+    val jsonDataProcessor = JsonDataProcessor(activity)
+    val data = jsonDataProcessor.getMenuData("math.base")
 
     override fun getItemCount(): Int {
         return data.idList.size
@@ -28,13 +36,6 @@ class FormulsAdapter(val activity: Context) : RecyclerView.Adapter<FormulaViewHo
         return FormulaViewHolder(cellForRow)
     }
 
-    fun getDrawable(name : String) : Drawable {
-        val res = activity.resources
-        val resId = res.getIdentifier(name, "drawable", activity.packageName)
-        val draw = res.getDrawable(resId)
-        return draw
-    }
-
     override fun onBindViewHolder(holder: FormulaViewHolder, position: Int) {
         val v = holder.itemView
 
@@ -44,7 +45,7 @@ class FormulsAdapter(val activity: Context) : RecyclerView.Adapter<FormulaViewHo
 
         v.title.text = title
 
-        val drawable = getDrawable(imgPath)
+        val drawable = getImgDrawable(activity, imgPath)
 
         v.img.setImageDrawable(drawable)
         v.pos_text.text = data.idList[position].toString()
