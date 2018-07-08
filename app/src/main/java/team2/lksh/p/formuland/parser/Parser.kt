@@ -4,10 +4,11 @@ import android.util.Log
 import org.antlr.v4.runtime.CharStreams
 import org.antlr.v4.runtime.CommonTokenStream
 import org.antlr.v4.runtime.tree.ErrorNode
+import team2.lksh.p.formuland.JsonDataProcessor
 import kotlin.math.*
 
 //Get list of string representations of functions
-class FormulaAnalyzer(function: MutableList<String>) : BaseVisitor<Double?>() {
+class FormulaAnalyzer(function: MutableList<String>, val dataProc : JsonDataProcessor) : BaseVisitor<Double?>() {
 
     private val parserRootCtx = mutableListOf<GenParser.RootContext>()
     private val rootCtxHashMap = mutableMapOf<String, GenParser.RootContext>()
@@ -41,7 +42,7 @@ class FormulaAnalyzer(function: MutableList<String>) : BaseVisitor<Double?>() {
             visitRoot(rootCtxHashMap[v])?.toString() ?: errorsToString()
         } catch (e : Exception) {
             errors.add(0,"Error: Wrong input.")
-            Log.d("PRS", "Wrong input")
+            Log.e("PRS", "Wrong input")
             errorsToString()
         }
     }
@@ -116,6 +117,15 @@ class FormulaAnalyzer(function: MutableList<String>) : BaseVisitor<Double?>() {
         errors.add("Error: Wrong input.")
         Log.e("PRS", "Wrong input")
         return super.visitErrorNode(node)
+    }
+
+    override fun visitCon(ctx: GenParser.ConContext?): Double? {
+        val tmp = dataProc.getConstValue(ctx?.ID().toString())
+        if (tmp == null) {
+            errors.add("Error: Constant doesn't exist.")
+            Log.e("PRS", "Constant doesn't exist.")
+        }
+        return tmp
     }
 
     private fun errorsToString() : String{
