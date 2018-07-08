@@ -14,7 +14,7 @@ class FormulsListActivity : AppCompatActivity() {
     fun onItemClick(v : View) {
 
         val a = Intent(this, MainFormulaActivity::class.java)
-        a.putExtra("index", v.pos_text.text)
+        a.putExtra("id", v.pos_text.text)
         startActivity(a)
     }
 

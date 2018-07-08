@@ -32,7 +32,7 @@
   {
     "name": "Вычисление корня",
     "expression": [
-      "@a@=sqrt(@b@)"
+      "@a@=_sqrt(@b@)"
     ],
     "type": "math.base",
     "image": "sqrt"

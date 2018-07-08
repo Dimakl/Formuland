@@ -15,7 +15,7 @@ class FormulaAnalyzer(function: MutableList<String>) : BaseVisitor<Double?>() {
         function.forEach {parserRootCtx.add(GenParser(CommonTokenStream(GenLexer(CharStreams.fromString(it)))).root())}
         parserRootCtx.forEach { rootCtxHashMap[it.variable().ID().toString()] = it}
     }
-    private var variables = hashMapOf<String, Double>()
+    private var variables = mutableMapOf<String, Double>()
     private val functions = hashMapOf<String,(List<Double>)-> Double>(
             "sin" to {i -> sin(i[0])},
             "cos" to {i -> cos(i[0])},
@@ -34,7 +34,7 @@ class FormulaAnalyzer(function: MutableList<String>) : BaseVisitor<Double?>() {
     //parameters:
     //hashMap - map of pairs (name_of_variable, its_value)
     //v - variable that we need to calculate
-    fun run(hashMap: HashMap<String, Double>, v : String): String? {
+    fun run(hashMap: MutableMap<String, Double>, v : String): String? {
         errors.clear()
         this.variables = hashMap
         return try {
