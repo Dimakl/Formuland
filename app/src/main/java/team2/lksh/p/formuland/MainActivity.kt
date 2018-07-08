@@ -3,6 +3,7 @@ package team2.lksh.p.formuland
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_main.*
@@ -17,8 +18,6 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(findViewById(R.id.toolbar))
 
         math.setOnClickListener{startActivity(Intent(this, FormulsListActivity::class.java))}
-
-        FormulaAnalyzer("@a + @b = 3")
 
     }
 
