@@ -4,7 +4,9 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
 import android.view.MenuItem
+import kotlinx.android.synthetic.main.activity_main.*
 import team2.lksh.p.formuland.parser.FormulaAnalyzer
 
 class MainActivity : AppCompatActivity() {
@@ -13,12 +15,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        setSupportActionBar(findViewById(R.id.my_toolbar))
+        setSupportActionBar(toolbar)
 
-        val a = FormulaAnalyzer("@a=3-@b*@c")
-        Log.i("anssss", a.run(hashMapOf("b" to 10.0, "cс" to 5.0)))
-
-        startActivity(Intent(this, FormulsListActivity::class.java))
+        math.setOnClickListener{startActivity(Intent(this, FormulsListActivity::class.java))}
 
     }
 
@@ -40,4 +39,29 @@ class MainActivity : AppCompatActivity() {
             super.onOptionsItemSelected(item)
         }
     }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true
+    }
+
+    /*   override fun onOptionsItemSelected(item: MenuItem): Boolean {
+           val id = item.itemId
+           val headerView = findViewById<View>(R.id.header) as TextView
+           when (id) {
+               R.id.math -> {
+                   headerView.text = "Математика"
+                   return true
+               }
+               R.id.physics -> {
+                   headerView.text = "Физика"
+                   return true
+               }
+               R.id.chemistry -> {
+                   headerView.text = "Химия"
+                   return true
+               }
+           }
+           return super.onOptionsItemSelected(item)
+       }*/
 }
