@@ -18,7 +18,7 @@
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         style="@style/MyStyle"
-        android:background="@color/colorAccent2"
+        android:background="@color/colorAccent3"
         app:titleTextColor="@color/white"
         app:title=""/>
 
