@@ -4,16 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainFormulaActivity">
+    tools:context=".MainFormulaActivity"
+    tools:layout_editor_absoluteY="25dp">
 
 
     <TextView
-        android:id="@+id/ind_test"
+        android:id="@+id/test1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
         android:text="INDEX"
         android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/args"
+        app:layout_constraintEnd_toStartOf="@+id/test2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/test2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="1dp"
+        android:text="INDEX"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/args"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/test3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="INDEX"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/args"
+        app:layout_constraintEnd_toStartOf="@+id/test1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/test4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="INDEX"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/args"
+        app:layout_constraintEnd_toStartOf="@+id/test3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,11 +60,11 @@
         android:id="@+id/args"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="57dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/calc_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ind_test" />
+        app:layout_constraintTop_toBottomOf="@+id/test4" />
 
     <Button
         android:id="@+id/calc_btn"

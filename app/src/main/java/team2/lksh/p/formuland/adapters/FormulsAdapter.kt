@@ -18,7 +18,7 @@ class FormulsAdapter(val activity: Context) : RecyclerView.Adapter<FormulaViewHo
     val data = getMenuData(activity, "math.base")
 
     override fun getItemCount(): Int {
-        return data.indices.size
+        return data.idList.size
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FormulaViewHolder {
@@ -40,14 +40,14 @@ class FormulsAdapter(val activity: Context) : RecyclerView.Adapter<FormulaViewHo
 
         val title = data.names[position]
         val imgPath = data.images[position]
-        holder.index = data.indices[position]
+        holder.index = data.idList[position]
 
         v.title.text = title
 
         val drawable = getDrawable(imgPath)
 
         v.img.setImageDrawable(drawable)
-        v.pos_text.text = data.indices[position].toString()
+        v.pos_text.text = data.idList[position].toString()
     }
 }
 class FormulaViewHolder(v: View) : CustomViewHolder(v) {

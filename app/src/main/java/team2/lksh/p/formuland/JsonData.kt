@@ -1,8 +1,10 @@
 package team2.lksh.p.formuland
 
 import android.content.Context
+import android.util.Log
 import com.google.gson.Gson
 import java.io.*
+import java.util.*
 
 
 private fun jsonParse(context: Context): Array<Expression> {
@@ -74,16 +76,19 @@ fun getImage(context: Context, id: Int): String = jsonParse(context)[id].image
 fun getExprVars(context: Context, ind: Int): List<String> {
     val data = jsonParse(context)
     val res: MutableSet<String> = mutableSetOf()
-    var i = 0
     val expr = data[ind].expression[0]
+
+    var i = 0
+
     while (i < expr.length) {
         if (expr[i] == '@') {
+            i++
             var variable = ""
             while (expr[i] != '@') {
-                variable += data[ind].expression[0]
+                variable += expr[i]
                 i++
             }
-           res.add(variable)
+            res.add(variable)
         }
         i++
     }
