@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.util.Log
+import android.view.Menu
 import android.view.View
 import kotlinx.android.synthetic.main.activity_main_formul.*
 import kotlinx.android.synthetic.main.argument_row.view.*
@@ -51,6 +52,12 @@ class MainFormulaActivity : AppCompatActivity() {
 
         adapter = argAdapter
 
+        setSupportActionBar(toolbar_formula)
+        toolbar_formula.setNavigationIcon(R.drawable.sharp_arrow_back_white_24)
+        toolbar_formula.setNavigationOnClickListener {
+            onBackPressed()
+        }
+        supportActionBar?.title = name
     }
 
     fun onCalculate(v: View) {
@@ -82,5 +89,10 @@ class MainFormulaActivity : AppCompatActivity() {
             Log.i("eeeee", res + "kjdsfskjdfn")
         }
 
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu);
+        return true
     }
 }

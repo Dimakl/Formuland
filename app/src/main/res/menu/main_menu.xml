@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
    <item
-      android:icon="@mipmap/ic_launcher"
+      android:icon="@drawable/sharp_menu_white_24"
        android:id="@+id/settings"
        app:showAsAction="always"
        android:title="InBredible" />
