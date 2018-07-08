@@ -4,9 +4,6 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuItem
-import kotlinx.android.synthetic.main.activity_main.*
-import team2.lksh.p.formuland.parser.FormulaAnalyzer
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val intent = Intent(this, FormulsListActivity::class.java)
+        val intent = Intent(this, FormulasListActivity::class.java)
         startActivity(intent)
     }
 

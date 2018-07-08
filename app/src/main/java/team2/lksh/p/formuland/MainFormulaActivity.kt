@@ -12,7 +12,7 @@ import team2.lksh.p.formuland.adapters.ArgumentsAdapter
 import team2.lksh.p.formuland.adapters.getImgDrawable
 import team2.lksh.p.formuland.parser.FormulaAnalyzer
 
-fun findElem(n : Int, arr : List<Int>) : Int {
+fun findElem(n: Int, arr: List<Int>): Int {
     for (i in 0..arr.size) {
         if (arr[i] == n) {
             return i
@@ -23,9 +23,9 @@ fun findElem(n : Int, arr : List<Int>) : Int {
 
 class MainFormulaActivity : AppCompatActivity() {
 
-    lateinit var adapter : ArgumentsAdapter
+    lateinit var adapter: ArgumentsAdapter
     var formulaId = -1
-    private lateinit var jsonData : JsonDataProcessor
+    private lateinit var jsonData: JsonDataProcessor
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,7 +42,7 @@ class MainFormulaActivity : AppCompatActivity() {
 
         val name = menuData.names[index]
         val imgName = menuData.images[index]
-        val vars = jsonData.getExprVars(index)
+        val vars = jsonData.getExprVars(formulaId)
 
         img_formula.setImageDrawable(getImgDrawable(this, imgName))
 
@@ -58,12 +58,12 @@ class MainFormulaActivity : AppCompatActivity() {
         toolbar_formula.setNavigationOnClickListener {
             onBackPressed()
         }
-        supportActionBar?.title = name
+        supportActionBar?.title = name + formulaId.toString()
     }
 
     fun onCalculate(v: View) {
 
-        val pares : MutableMap<String, Double> = mutableMapOf()
+        val pares: MutableMap<String, Double> = mutableMapOf()
         var unknownVar = ""
 
         for (view in adapter.cardList) {
@@ -80,7 +80,7 @@ class MainFormulaActivity : AppCompatActivity() {
             }
         }
 
-        val a = FormulaAnalyzer(jsonData.getExpr(formulaId).toMutableList(),jsonData)
+        val a = FormulaAnalyzer(jsonData.getExpr(formulaId).toMutableList(), jsonData)
 
         val res = a.run(pares, unknownVar)
 

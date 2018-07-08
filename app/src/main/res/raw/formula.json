@@ -32,12 +32,39 @@
   {
     "name": "Вычисление корня",
     "expression": [
-      "@a@=_sqrt(@b@)",
-      "@b@=a^2"
+      "@a@=_sqrt(@b@)"
     ],
     "type": "math.base",
     "image": "sqrt"
   },
+  {
+    "name": "Площадь круга",
+    "expression": [
+      "@S@=&pi*@r@^2",
+      "@r@=_sqrt(@S@/&pi)"
+    ],
+    "type": "math.base",
+    "image": "circle_s"
+  },
+
+  {
+    "name": "Площадь круга",
+    "expression": [
+      "@l@=2*&pi*@R@",
+      "@R@=@l@/(2*&pi)"
+    ],
+    "type": "math.base",
+    "image": "circle_l"
+  },
+
+
+
+
+
+
+
+
+
   {
     "name": "II закон Ньютона",
     "expression": [
@@ -46,16 +73,16 @@
       "@m@=@F@/@a@"
     ],
     "type": "physics.base",
-    "image": "secondlawnewton"
+    "image": "secondlawnewtonremastred"
   },
   {
     "name": "Сила тяжести",
     "expression": [
-      "@F@=@m@*&g&",
-      "@m@=@F@/&g&"
+      "@F@=@m@*&g",
+      "@m@=@F@/&g"
     ],
     "type": "physics.base",
-    "image": "ft"
+    "image": "ftremastred"
   },
   {
     "name": "Сила трения скольжения",
@@ -65,7 +92,68 @@
       "@mu@=@F@/@N@"
     ],
     "type": "physics.base",
-    "image": "ftrs"
+    "image": "ftrsremastred"
+  },
+  {
+    "name": "Сила всемирного тяготения",
+    "expression": [
+      "@F@=&G&(@m1@*@m2@)/(@r@*@r@)",
+      "@m1@=(@F@*@r@*@r@)/(&G*@m2@)",
+      "@m2@=(@F@*@r@*@r@)/(&G*@m1@)",
+      "@r@=_sqrt((&G*@m1@*@m2@)/@F@)"
+    ],
+    "type": "physics.base",
+    "image": "gravity"
+  },
+  {
+    "name": "Сила упругости",
+    "expression": [
+      "@F@=@k@*@dx@",
+      "@k@=@F@/@dx@",
+      "@dx@=@F@/@k@"
+    ],
+    "type": "physics.base",
+    "image": "fypr"
+  },
+  {
+    "name": "Момент силы",
+    "expression": [
+      "@M@=@F@*@d@",
+      "@F@=@M@/@d@",
+      "@d@=@M@/@F@"
+    ],
+    "type": "physics.base",
+    "image": "momfor"
+  },
+  {
+    "name": "Первая космическая скорость",
+    "expression": [
+      "@nu@=_sqrt((&G*@m@)/@R@)",
+      "@m@=(@nu@^2*@R@)/&G",
+      "@R@=(@m@*&G)/(@nu@*@nu@)"
+    ],
+    "type": "physics.base",
+    "image": "firstspacespeed"
+  },
+  {
+    "name": "Импульс",
+    "expression": [
+      "@p@=@m@*@nu@",
+      "@m@=@p@/@nu@",
+      "@nu@=@p@/@m@"
+    ],
+    "type": "physics.base",
+    "image": "impuls"
+  },
+  {
+    "name": "Импульс силы",
+    "expression": [
+      "@p@=@F@*@dt@",
+      "@F@=@p@/@dt@",
+      "@dt@=@p@/@F@"
+    ],
+    "type": "physics.base",
+    "image": "impulsforce"
   },
   {
     "name": "Количество вещества",
@@ -74,7 +162,7 @@
       "@m@=@n@*@M@",
       "@M@=@m@/@n@"
     ],
-    "type": "physics.base",
+    "type": "chemistry.base",
     "image": "vvo"
   },
   {
@@ -84,7 +172,7 @@
       "@m@=@ro@*@V@",
       "@V@=@m@/@ro@"
     ],
-    "type": "physics.base",
+    "type": "chemistry.base",
     "image": "density"
   },
   {
@@ -94,7 +182,18 @@
       "@M@=@D@*@MM@",
       "@MM@=@M@/@D@"
     ],
-    "type": "physics.base",
+    "type": "chemistry.base",
     "image": "density2"
+  },
+  {
+    "name": "Скорость химической реакции",
+    "expression": [
+      "@nu@=@n@/(@V@*@t@)",
+      "@n@=@nu@*@V@*@t@",
+      "@V@=@n@/(@nu@*@t@)",
+      "@t@=@n@/(@nu@*@V@)"
+    ],
+    "type": "chemistry.base",
+    "image": "speedchem"
   }
 ]

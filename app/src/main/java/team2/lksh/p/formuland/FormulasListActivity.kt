@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.section_row.view.*
 import team2.lksh.p.formuland.adapters.FormulsAdapter
 import team2.lksh.p.formuland.adapters.SectionsCustomAdapter
 
-class FormulsListActivity : AppCompatActivity() {
+class FormulasListActivity : AppCompatActivity() {
 
     private val subjectList = listOf("Mathematics", "Physics", "Chemistry")
 
@@ -46,7 +46,17 @@ class FormulsListActivity : AppCompatActivity() {
     }
 
     fun onSectionClick(v : View) {
-        when(v.subject.text) {
+//        when(v.subject.text) {
+//            subjectList[0] -> {
+//                list.adapter = FormulsAdapter(this, JsonData.mathBase)
+//                currentSubject = JsonData.mathBase}
+//            subjectList[1] -> {
+//                list.adapter = FormulsAdapter(this, JsonData.physicsBase)
+//                currentSubject = JsonData.physicsBase
+//            }
+//        }
+
+        when(v.buttonSection.text) {
             subjectList[0] -> {
                 list.adapter = FormulsAdapter(this, JsonData.mathBase)
                 currentSubject = JsonData.mathBase}
