@@ -13,7 +13,7 @@ class SectionsCustomAdapter(val subjects : List<String>) : RecyclerView.Adapter<
     }
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
-        holder.itemView.buttonSection.text = subjects[position]
+        holder.itemView.subject.text = subjects[position]
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {

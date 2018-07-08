@@ -6,4 +6,5 @@
     <color name="white">#FFFFFF</color>
     <color name="colorAccent2">#009688</color>
     <color name="colorAccent3">#008678</color>
+    <color name="cardColor">#e8c87f</color>
 </resources>

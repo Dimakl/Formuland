@@ -2,5 +2,13 @@
   {
     "name": "pi",
     "value": 3.14
+  },
+  {
+    "name": "g",
+    "value": 9.81
+  },
+  {
+    "name": "G",
+    "value": 1.00
   }
 ]

@@ -56,7 +56,7 @@ class FormulasListActivity : AppCompatActivity() {
 //            }
 //        }
 
-        when(v.buttonSection.text) {
+        when(v.subject.text) {
             subjectList[0] -> {
                 list.adapter = FormulsAdapter(this, JsonData.mathBase)
                 currentSubject = JsonData.mathBase}
