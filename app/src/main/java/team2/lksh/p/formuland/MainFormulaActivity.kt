@@ -25,13 +25,14 @@ class MainFormulaActivity : AppCompatActivity() {
 
     lateinit var adapter : ArgumentsAdapter
     var formulaId = -1
-    lateinit var jsonData : JsonDataProcessor
+    private lateinit var jsonData : JsonDataProcessor
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_formul)
 
         formulaId = intent.getStringExtra("id").toInt()
+
         jsonData = JsonDataProcessor(this)
 
         val menuData = jsonData.getMenuData(JsonData.mathBase)
@@ -78,7 +79,7 @@ class MainFormulaActivity : AppCompatActivity() {
             }
         }
 
-        val a = FormulaAnalyzer(jsonData.getExpr(formulaId).toMutableList(), jsonData)
+        val a = FormulaAnalyzer(jsonData.getExpr(formulaId).toMutableList(),jsonData)
 
         val res = a.run(pares, unknownVar)
 

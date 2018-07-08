@@ -7,7 +7,7 @@
       "@c@=@a@-@b@"
     ],
     "type": "math.base",
-    "image": "sum3"
+    "image": "sum4"
   },
   {
     "name": "Вычитание",
@@ -32,7 +32,8 @@
   {
     "name": "Вычисление корня",
     "expression": [
-      "@a@=_sqrt(@b@)"
+      "@a@=_sqrt(@b@)",
+      "@b@=a^2"
     ],
     "type": "math.base",
     "image": "sqrt"
@@ -44,7 +45,7 @@
       "@a@=@F@/@m@",
       "@m@=@F@/@a@"
     ],
-    "type": "math.base",
+    "type": "physics.base",
     "image": "secondlawnewton"
   },
   {
@@ -53,7 +54,7 @@
       "@F@=@m@*&g&",
       "@m@=@F@/&g&"
     ],
-    "type": "math.base",
+    "type": "physics.base",
     "image": "ft"
   },
   {
@@ -63,7 +64,7 @@
       "@N@=@F@/@mu@",
       "@mu@=@F@/@N@"
     ],
-    "type": "math.base",
+    "type": "physics.base",
     "image": "ftrs"
   },
   {
@@ -73,7 +74,7 @@
       "@m@=@n@*@M@",
       "@M@=@m@/@n@"
     ],
-    "type": "math.base",
+    "type": "physics.base",
     "image": "vvo"
   },
   {
@@ -83,7 +84,7 @@
       "@m@=@ro@*@V@",
       "@V@=@m@/@ro@"
     ],
-    "type": "math.base",
+    "type": "physics.base",
     "image": "density"
   },
   {
@@ -93,7 +94,7 @@
       "@M@=@D@*@MM@",
       "@MM@=@M@/@D@"
     ],
-    "type": "math.base",
+    "type": "physics.base",
     "image": "density2"
   }
 ]
