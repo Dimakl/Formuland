@@ -30,21 +30,21 @@ class JsonData {
 
     companion object {
         // const String data types
-        val mathBase = "math.base"
+        const val mathBase = "math.base"
     }
 
 }
 
 class MenuData(val names: List<String>,
                val images: List<String>,
-               val indices: List<Int>)
+               val idList: List<Int>)
 
 /**
  * All json data types:
  * -math.base
  *
  * getMenuData() returns MenuData object:
- * List of names, images, indices
+ * List of names, images, idList
  *
  * getExprVars() returns list of 1-symbol variables (String type)
  *
@@ -58,15 +58,15 @@ fun getMenuData(context: Context, type: String): MenuData {
     val data = jsonParse(context)
     val names: MutableList<String> = mutableListOf()
     val images: MutableList<String> = mutableListOf()
-    val indices: MutableList<Int> = mutableListOf()
+    val idList: MutableList<Int> = mutableListOf()
     for (i in 0 until data.size) {
         if (data[i].type == type) {
             names.add(data[i].name)
             images.add(data[i].image)
-            indices.add(i)
+            idList.add(i)
         }
     }
-    return MenuData(names, images, indices)
+    return MenuData(names, images, idList)
 }
 
 fun getImage(context: Context, id: Int): String = jsonParse(context)[id].image
