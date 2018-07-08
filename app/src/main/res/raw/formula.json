@@ -3,7 +3,7 @@
     "name": "Сумма",
     "expression": [
       "@a@=@b@+@c@",
-      "@b=@a@-@c@",
+      "@b@=@a@-@c@",
       "@c@=@a@-@b@"
     ],
     "type": "math.base",
@@ -36,5 +36,64 @@
     ],
     "type": "math.base",
     "image": "sqrt"
+  },
+  {
+    "name": "II закон Ньютона",
+    "expression": [
+      "@F@=@m@*@a@",
+      "@a@=@F@/@m@",
+      "@m@=@F@/@a@"
+    ],
+    "type": "math.base",
+    "image": "secondlawnewton"
+  },
+  {
+    "name": "Сила тяжести",
+    "expression": [
+      "@F@=@m@*&g&",
+      "@m@=@F@/&g&"
+    ],
+    "type": "math.base",
+    "image": "ft"
+  },
+  {
+    "name": "Сила трения скольжения",
+    "expression": [
+      "@F@=@mu@*@N@",
+      "@N@=@F@/@mu@",
+      "@mu@=@F@/@N@"
+    ],
+    "type": "math.base",
+    "image": "ftrs"
+  },
+  {
+    "name": "Количество вещества",
+    "expression": [
+      "@n@=@m@/@M@",
+      "@m@=@n@*@M@",
+      "@M@=@m@/@n@"
+    ],
+    "type": "math.base",
+    "image": "vvo"
+  },
+  {
+    "name": "Плотность",
+    "expression": [
+      "@ro@=@m@/@V@",
+      "@m@=@ro@*@V@",
+      "@V@=@m@/@ro@"
+    ],
+    "type": "math.base",
+    "image": "density"
+  },
+  {
+    "name": "Относительная плотность",
+    "expression": [
+      "@D@=@M@/@MM@",
+      "@M@=@D@*@MM@",
+      "@MM@=@M@/@D@"
+    ],
+    "type": "math.base",
+    "image": "density2"
   }
 ]
