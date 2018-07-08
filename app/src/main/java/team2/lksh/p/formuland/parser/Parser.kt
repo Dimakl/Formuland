@@ -6,11 +6,17 @@ import org.antlr.v4.runtime.CommonTokenStream
 import org.antlr.v4.runtime.tree.ErrorNode
 import kotlin.math.*
 
-class FormulaAnalyzer(function: String) : BaseVisitor<Double?>() {
+//Get list of string representations of functions
+class FormulaAnalyzer(function: MutableList<String>) : BaseVisitor<Double?>() {
 
-    private val parserRootCtx = GenParser(CommonTokenStream(GenLexer(CharStreams.fromString(function)))).root()
+    private val parserRootCtx = mutableListOf<GenParser.RootContext>()
+    private val rootCtxHashMap = mutableMapOf<String, GenParser.RootContext>()
+    init {
+        function.forEach {parserRootCtx.add(GenParser(CommonTokenStream(GenLexer(CharStreams.fromString(it)))).root())}
+        parserRootCtx.forEach { rootCtxHashMap[it.variable().ID().toString()] = it}
+    }
     private var variables = hashMapOf<String, Double>()
-    private val functions = hashMapOf<String, (List<Double>)-> Double>(
+    private val functions = hashMapOf<String,(List<Double>)-> Double>(
             "sin" to {i -> sin(i[0])},
             "cos" to {i -> cos(i[0])},
             "tan" to {i -> tan(i[0])},
@@ -23,11 +29,16 @@ class FormulaAnalyzer(function: String) : BaseVisitor<Double?>() {
 
     private val errors = mutableListOf<String>()
 
-    fun run(hashMap: HashMap<String, Double>): String? {
+
+    //It's need for calculating value
+    //parameters:
+    //hashMap - map of pairs (name_of_variable, its_value)
+    //v - variable that we need to calculate
+    fun run(hashMap: HashMap<String, Double>, v : String): String? {
         errors.clear()
         this.variables = hashMap
         return try {
-            visitRoot(parserRootCtx)?.toString() ?: errorsToString()
+            visitRoot(rootCtxHashMap[v])?.toString() ?: errorsToString()
         } catch (e : Exception) {
             errors.add(0,"Error: Wrong input.")
             Log.d("PRS", "Wrong input")
