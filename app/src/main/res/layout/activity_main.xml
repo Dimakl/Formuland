@@ -11,47 +11,7 @@
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         style="@style/MyStyle"
-        android:background="@color/colorAccent2"
+        android:background="@color/colorAccent3"
         app:titleTextColor="@color/white">
     </android.support.v7.widget.Toolbar>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        style="@style/MyStyle"
-        android:orientation="horizontal"
-        android:layout_below="@id/toolbar"
-        android:background="@color/colorAccent2">
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Математика"
-            android:id="@+id/math"
-            style="@style/MyStyle"
-            android:background="@color/colorAccent2"
-            android:textColor="@color/white"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Физика"
-            android:id="@+id/physics"
-            style="@style/MyStyle"
-            android:background="@color/colorAccent2"
-            android:textColor="@color/white"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Химия"
-            android:id="@+id/chemistry"
-            style="@style/MyStyle"
-            android:background="@color/colorAccent2"
-            android:textColor="@color/white"/>
-
-    </LinearLayout>
 </RelativeLayout>

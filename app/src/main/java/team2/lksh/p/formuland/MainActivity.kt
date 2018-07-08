@@ -16,10 +16,6 @@ class MainActivity : AppCompatActivity() {
 
         val intent = Intent(this, FormulsListActivity::class.java)
         startActivity(intent)
-
-
-        math.setOnClickListener{startActivity(Intent(this, FormulsListActivity::class.java))}
-
     }
 
 
