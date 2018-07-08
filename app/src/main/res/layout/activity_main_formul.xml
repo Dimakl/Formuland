@@ -7,6 +7,19 @@
     tools:context=".MainFormulaActivity"
     tools:layout_editor_absoluteY="25dp">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_formula"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/img_formula"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        style="@style/MyStyle"
+        android:background="@color/colorAccent2"
+        app:titleTextColor="@color/white"/>
 
     <ImageView
         android:id="@+id/img_formula"
@@ -19,7 +32,7 @@
         app:layout_constraintBottom_toTopOf="@+id/args"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_formula"
         app:srcCompat="@drawable/mult"
         android:contentDescription="@string/formula" />
 

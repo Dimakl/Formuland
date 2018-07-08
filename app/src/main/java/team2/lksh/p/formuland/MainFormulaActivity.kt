@@ -50,6 +50,12 @@ class MainFormulaActivity : AppCompatActivity() {
 
         adapter = argAdapter
 
+        setSupportActionBar(toolbar_formula)
+        toolbar_formula.setNavigationIcon(R.drawable.sharp_arrow_back_white_24)
+        toolbar_formula.setNavigationOnClickListener {
+            onBackPressed()
+        }
+        toolbar_formula.title = name
     }
 
     fun onCalculate(v: View) {
