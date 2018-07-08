@@ -9,9 +9,13 @@ import android.view.View
 import kotlinx.android.synthetic.main.activity_formul_list.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.formul_row.view.*
+import kotlinx.android.synthetic.main.section_row.view.*
 import team2.lksh.p.formuland.adapters.FormulsAdapter
+import team2.lksh.p.formuland.adapters.SectionsCustomAdapter
 
 class FormulsListActivity : AppCompatActivity() {
+
+    private val subjectList = listOf("Mathematics", "Physics", "Chemistry")
 
     fun onFormulaClick(v : View) {
 
@@ -26,12 +30,22 @@ class FormulsListActivity : AppCompatActivity() {
 
         setSupportActionBar(toolbar)
         list.layoutManager = LinearLayoutManager(this)
-        list.adapter = FormulsAdapter(this)
+        list.adapter = FormulsAdapter(this, JsonData.mathBase)
+
+        section_tab.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        section_tab.adapter = SectionsCustomAdapter(subjectList)
         
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        getMenuInflater().inflate(R.menu.main_menu, menu);
+        getMenuInflater().inflate(R.menu.main_menu, menu)
         return true
+    }
+
+    fun onSectionClick(v : View) {
+        when(v.subject.text) {
+            subjectList[0] -> list.adapter = FormulsAdapter(this, JsonData.mathBase)
+            subjectList[1] -> list.adapter = FormulsAdapter(this, JsonData.physicsBase)
+        }
     }
 }

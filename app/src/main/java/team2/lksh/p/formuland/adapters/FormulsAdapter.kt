@@ -12,6 +12,7 @@ import android.view.View
 import kotlinx.android.synthetic.main.formul_row.view.*
 import team2.lksh.p.formuland.R
 import team2.lksh.p.formuland.JsonDataProcessor
+import javax.security.auth.Subject
 
 fun getImgDrawable(activity: Context, name : String) : Drawable {
     val res = activity.resources
@@ -20,10 +21,10 @@ fun getImgDrawable(activity: Context, name : String) : Drawable {
     return draw
 }
 
-class FormulsAdapter(val activity: Context) : RecyclerView.Adapter<FormulaViewHolder>() {
+class FormulsAdapter(val activity: Context, val subject: String) : RecyclerView.Adapter<FormulaViewHolder>() {
 
     val jsonDataProcessor = JsonDataProcessor(activity)
-    val data = jsonDataProcessor.getMenuData("math.base")
+    val data = jsonDataProcessor.getMenuData(subject)
 
     override fun getItemCount(): Int {
         return data.idList.size

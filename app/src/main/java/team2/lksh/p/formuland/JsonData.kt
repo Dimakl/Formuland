@@ -111,6 +111,7 @@ class JsonData {
     companion object {
         // const String data types
         const val mathBase = "math.base"
+        const val physicsBase = "physics.base"
     }
 
 }
