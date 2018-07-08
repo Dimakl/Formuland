@@ -99,10 +99,10 @@ class JsonDataProcessor(private val context: Context) {
 
     fun getExpr(ind: Int): List<String> = data[ind].expression
 
-    fun getConstValue(constName: String): Double {
+    fun getConstValue(constName: String): Double? {
         for (obj in const)
             if (obj.name == constName) return obj.value
-        return 0.0
+        return null
     }
 }
 
