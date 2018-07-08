@@ -17,7 +17,19 @@
         app:cardCornerRadius="20dp"
         app:cardElevation="5dp"
         app:contentPadding="10dp"
-        android:onClick="onItemClick">
+        android:onClick="onFormulaClick">
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ftrs" />
+
+        <TextView
+            android:id="@+id/pos_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/pos_text"
