@@ -43,7 +43,7 @@ class FormulsListActivity : AppCompatActivity() {
     }
 
     fun onSectionClick(v : View) {
-        when(v.subject.text) {
+        when(v.buttonSection.text) {
             subjectList[0] -> list.adapter = FormulsAdapter(this, JsonData.mathBase)
             subjectList[1] -> list.adapter = FormulsAdapter(this, JsonData.physicsBase)
         }
