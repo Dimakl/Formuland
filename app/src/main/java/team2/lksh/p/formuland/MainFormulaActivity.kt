@@ -58,7 +58,7 @@ class MainFormulaActivity : AppCompatActivity() {
         toolbar_formula.setNavigationOnClickListener {
             onBackPressed()
         }
-        supportActionBar?.title = name + formulaId.toString()
+        supportActionBar?.title = name
     }
 
     fun onCalculate(v: View) {
