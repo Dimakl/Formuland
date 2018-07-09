@@ -59,10 +59,10 @@
   {
     "name": "Рандом",
     "expression": [
-      "@r@=_randTo(@n@)"
+      "@r@=_abs(_randTo(@n@))"
     ],
-    "type": "physics.base",
-    "image": "molecspeed"
+    "type": "math.base",
+    "image": "rand"
   },
 
 
@@ -168,6 +168,11 @@
     "type": "physics.base",
     "image": "molecspeed"
   },
+
+
+
+
+
 
 
 
