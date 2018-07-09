@@ -106,12 +106,9 @@ class JsonDataProcessor(private val context: Context) {
     }
 }
 
-class JsonData {
-
-    companion object {
-        // const String data types
-        const val mathBase = "math.base"
-        const val physicsBase = "physics.base"
-    }
-
+enum class JsonTypes(value: String) {
+    MathBase("math.base"),
+    MathGeometry("math.geometry"),
+    PhysicsBase("physics.base"),
+    ChemistryBase("chemistry.base")
 }
