@@ -23,7 +23,7 @@ class FormulasListActivity : AppCompatActivity() {
 //    }
 
 
-    private val subjectList = listOf("Mathematics", "Physics", "Chemistry")
+    private val subjectList = listOf("Математика", "Физика", "Химия", "Информатика")//"Mathematics", "Physics", "Chemistry")
 
     var currentSubject = JsonTypes.mathBase
 
@@ -77,6 +77,10 @@ class FormulasListActivity : AppCompatActivity() {
             subjectList[2] -> {
                 list.adapter = FormulsAdapter(this, JsonTypes.chemistryBase)
                 currentSubject = JsonTypes.chemistryBase
+            }
+            subjectList[3] -> {
+                list.adapter = FormulsAdapter(this, JsonTypes.informaticsBase)
+                currentSubject = JsonTypes.informaticsBase
             }
         }
     }

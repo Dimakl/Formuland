@@ -116,6 +116,8 @@ class JsonTypes {
         const val physicsBase = "physics.base"
 
         const val chemistryBase = "chemistry.base"
+
+        const val informaticsBase = "informatics.base"
     }
 
 }
