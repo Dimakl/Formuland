@@ -70,8 +70,6 @@ class MainFormulaActivity : AppCompatActivity() {
             val variable = view.variable.text.toString()
             val input = view.arg_edit.text.toString()
 
-//            Log.v("qqqqqqqqq", variable + "     " + input + "qw")
-
             if (input.isBlank()) {
                 unknownVar = variable
             } else {
@@ -86,7 +84,6 @@ class MainFormulaActivity : AppCompatActivity() {
         if (res != null) {
             answer.text = res
         } else {
-            Log.i("eeeee", res + "kjdsfskjdfn")
         }
 
     }

@@ -28,11 +28,12 @@ class FormulaAnalyzer(function: MutableList<String>, val dataProc : JsonDataProc
             "min" to {i -> min(i[0], i[1])},
             "max" to {i -> max(i[0], i[1])},
             "log" to {i -> log(i[0], i[1])},
-            "log2" to {i -> log2(i[0])},
-            "log10" to {i -> log10(i[0])},
+            "log2" to {i -> log(i[0], 2.0)},
+            "log10" to {i -> log(i[0], 10.0)},
             "ceil" to {i -> ceil(i[0])},
             "floor" to {i -> floor(i[0])},
-            "rand" to {i -> Random().nextDouble()}
+            "randInt" to { _ -> Random().nextDouble()},
+            "randTo" to {arr -> Random().nextInt() % arr[0]}
     )
 
     private val errors = mutableListOf<String>()

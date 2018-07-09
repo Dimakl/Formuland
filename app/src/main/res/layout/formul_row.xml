@@ -55,7 +55,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/title"
-                app:srcCompat="@drawable/sum3" />
+                app:srcCompat="@drawable/sum4" />
 
         </android.support.constraint.ConstraintLayout>
     </android.support.v7.widget.CardView>

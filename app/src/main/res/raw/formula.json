@@ -56,6 +56,14 @@
     "type": "math.base",
     "image": "circle_l"
   },
+  {
+    "name": "Рандом",
+    "expression": [
+      "@r@=_randTo(@n@)"
+    ],
+    "type": "physics.base",
+    "image": "molecspeed"
+  },
 
 
 
@@ -150,6 +158,16 @@
     "type": "physics.base",
     "image": "impulsforce"
   },
+  {
+    "name": "Средняя квадратичная скорость",
+    "expression": [
+      "@nu@=_sqrt((3*&k*@T@)/@m0@)",
+      "@T@=(@m0@*@nu@^2)/(3*@k@)",
+      "@m0@=(3*@k@*@T@)/(@nu@^2)"
+    ],
+    "type": "physics.base",
+    "image": "molecspeed"
+  },
 
 
 
@@ -193,7 +211,68 @@
     ],
     "type": "chemistry.base",
     "image": "speedchem"
+  },
+  {
+    "name": "Формула Менделеева-Клапейрона",
+    "expression": [
+      "@p@=(@nu@*&R*@T@)/@V@",
+      "@V@=(@nu@*&R*@T@)/@p@",
+      "@nu@=(@p@*@V@)/(@T@*&R)",
+      "@T@=(@p@*@V@)/(@nu@*&R)"
+    ],
+    "type": "physics.base",
+    "image": "mendeleev"
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {
+    "name": "Мощность алфавита",
+    "expression": [
+      "@N@=2^@i@",
+      "@i@=_ceil(_log(@N@,2))"
+    ],
+    "type": "informatics.base",
+    "image": "alppower"
+  },
+  {
+    "name": "Информационный объем сообщения",
+    "expression": [
+      "@I@=@K@*@i@",
+      "@K@=@I@/@i@",
+      "@i@=@I@/@K@"
+    ],
+    "type": "informatics.base",
+    "image": "countinfo"
+  },
+  {
+    "name": "Количество сообщений",
+    "expression": [
+      "@Q@=@N@^@L@",
+      "@L@=_log(@Q@,@N@)",
+      "@N@=@Q@^(1/@L@)"
+    ],
+    "type": "informatics.base",
+    "image": "countmes"
+  },
+  {
+    "name": "Формула Хартли",
+    "expression": [
+      "@I@=_ceil(_log(@N@,2))",
+      "@N@=2^@I@"
+    ],
+    "type": "informatics.base",
+    "image": "hartley"
   }
-
-
 ]
