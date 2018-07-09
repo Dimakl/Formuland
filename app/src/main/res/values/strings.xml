@@ -11,4 +11,5 @@
     <string name="calculate">Вычислить</string>
     <string name="formula">Formula</string>
     <string name="argument">Введите число</string>
+    <string name="wrong_input_error">Error: Wrong input.</string>
 </resources>
