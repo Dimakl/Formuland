@@ -93,7 +93,7 @@ public class GenParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_root; }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof IVisitor) return ((IVisitor<? extends T>)visitor).visitRoot(this);
+			if ( visitor instanceof IVisitor ) return ((IVisitor<? extends T>)visitor).visitRoot(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -158,7 +158,7 @@ public class GenParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_expr; }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof IVisitor) return ((IVisitor<? extends T>)visitor).visitExpr(this);
+			if ( visitor instanceof IVisitor ) return ((IVisitor<? extends T>)visitor).visitExpr(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -352,7 +352,7 @@ public class GenParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_func; }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof IVisitor) return ((IVisitor<? extends T>)visitor).visitFunc(this);
+			if ( visitor instanceof IVisitor ) return ((IVisitor<? extends T>)visitor).visitFunc(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -389,7 +389,7 @@ public class GenParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_con; }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof IVisitor) return ((IVisitor<? extends T>)visitor).visitCon(this);
+			if ( visitor instanceof IVisitor ) return ((IVisitor<? extends T>)visitor).visitCon(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -418,7 +418,10 @@ public class GenParser extends Parser {
 	}
 
 	public static class VariableContext extends ParserRuleContext {
-		public TerminalNode DOLL() { return getToken(GenParser.DOLL, 0); }
+		public List<TerminalNode> DOLL() { return getTokens(GenParser.DOLL); }
+		public TerminalNode DOLL(int i) {
+			return getToken(GenParser.DOLL, i);
+		}
 		public TerminalNode ID() { return getToken(GenParser.ID, 0); }
 		public VariableContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -426,7 +429,7 @@ public class GenParser extends Parser {
 		@Override public int getRuleIndex() { return RULE_variable; }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof IVisitor) return ((IVisitor<? extends T>)visitor).visitVariable(this);
+			if ( visitor instanceof IVisitor ) return ((IVisitor<? extends T>)visitor).visitVariable(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -441,6 +444,8 @@ public class GenParser extends Parser {
 			match(DOLL);
 			setState(61);
 			match(ID);
+			setState(62);
+			match(DOLL);
 			}
 		}
 		catch (RecognitionException re) {
@@ -474,24 +479,24 @@ public class GenParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\21B\4\2\t\2\4\3\t"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\21C\4\2\t\2\4\3\t"+
 		"\3\4\4\t\4\4\5\t\5\4\6\t\6\3\2\3\2\3\2\3\2\3\3\3\3\3\3\3\3\3\3\3\3\3\3"+
 		"\3\3\7\3\31\n\3\f\3\16\3\34\13\3\5\3\36\n\3\3\3\3\3\3\3\3\3\3\3\3\3\3"+
 		"\3\3\3\3\3\5\3)\n\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\7\3\64\n\3\f\3"+
-		"\16\3\67\13\3\3\4\3\4\3\4\3\5\3\5\3\5\3\6\3\6\3\6\3\6\2\3\4\7\2\4\6\b"+
-		"\n\2\4\3\2\6\7\3\2\4\5\2F\2\f\3\2\2\2\4(\3\2\2\2\68\3\2\2\2\b;\3\2\2\2"+
-		"\n>\3\2\2\2\f\r\5\n\6\2\r\16\7\20\2\2\16\17\5\4\3\2\17\3\3\2\2\2\20\21"+
-		"\b\3\1\2\21\22\7\5\2\2\22)\5\4\3\13\23\24\5\6\4\2\24\35\7\b\2\2\25\32"+
-		"\5\4\3\2\26\27\7\17\2\2\27\31\5\4\3\2\30\26\3\2\2\2\31\34\3\2\2\2\32\30"+
-		"\3\2\2\2\32\33\3\2\2\2\33\36\3\2\2\2\34\32\3\2\2\2\35\25\3\2\2\2\35\36"+
-		"\3\2\2\2\36\37\3\2\2\2\37 \7\t\2\2 )\3\2\2\2!)\5\b\5\2\")\5\n\6\2#)\7"+
-		"\n\2\2$%\7\b\2\2%&\5\4\3\2&\'\7\t\2\2\')\3\2\2\2(\20\3\2\2\2(\23\3\2\2"+
-		"\2(!\3\2\2\2(\"\3\2\2\2(#\3\2\2\2($\3\2\2\2)\65\3\2\2\2*+\f\n\2\2+,\7"+
-		"\21\2\2,\64\5\4\3\13-.\f\t\2\2./\t\2\2\2/\64\5\4\3\n\60\61\f\b\2\2\61"+
-		"\62\t\3\2\2\62\64\5\4\3\t\63*\3\2\2\2\63-\3\2\2\2\63\60\3\2\2\2\64\67"+
-		"\3\2\2\2\65\63\3\2\2\2\65\66\3\2\2\2\66\5\3\2\2\2\67\65\3\2\2\289\7\13"+
-		"\2\29:\7\3\2\2:\7\3\2\2\2;<\7\r\2\2<=\7\3\2\2=\t\3\2\2\2>?\7\f\2\2?@\7"+
-		"\3\2\2@\13\3\2\2\2\7\32\35(\63\65";
+		"\16\3\67\13\3\3\4\3\4\3\4\3\5\3\5\3\5\3\6\3\6\3\6\3\6\3\6\2\3\4\7\2\4"+
+		"\6\b\n\2\4\3\2\6\7\3\2\4\5\2G\2\f\3\2\2\2\4(\3\2\2\2\68\3\2\2\2\b;\3\2"+
+		"\2\2\n>\3\2\2\2\f\r\5\n\6\2\r\16\7\20\2\2\16\17\5\4\3\2\17\3\3\2\2\2\20"+
+		"\21\b\3\1\2\21\22\7\5\2\2\22)\5\4\3\13\23\24\5\6\4\2\24\35\7\b\2\2\25"+
+		"\32\5\4\3\2\26\27\7\17\2\2\27\31\5\4\3\2\30\26\3\2\2\2\31\34\3\2\2\2\32"+
+		"\30\3\2\2\2\32\33\3\2\2\2\33\36\3\2\2\2\34\32\3\2\2\2\35\25\3\2\2\2\35"+
+		"\36\3\2\2\2\36\37\3\2\2\2\37 \7\t\2\2 )\3\2\2\2!)\5\b\5\2\")\5\n\6\2#"+
+		")\7\n\2\2$%\7\b\2\2%&\5\4\3\2&\'\7\t\2\2\')\3\2\2\2(\20\3\2\2\2(\23\3"+
+		"\2\2\2(!\3\2\2\2(\"\3\2\2\2(#\3\2\2\2($\3\2\2\2)\65\3\2\2\2*+\f\n\2\2"+
+		"+,\7\21\2\2,\64\5\4\3\13-.\f\t\2\2./\t\2\2\2/\64\5\4\3\n\60\61\f\b\2\2"+
+		"\61\62\t\3\2\2\62\64\5\4\3\t\63*\3\2\2\2\63-\3\2\2\2\63\60\3\2\2\2\64"+
+		"\67\3\2\2\2\65\63\3\2\2\2\65\66\3\2\2\2\66\5\3\2\2\2\67\65\3\2\2\289\7"+
+		"\13\2\29:\7\3\2\2:\7\3\2\2\2;<\7\r\2\2<=\7\3\2\2=\t\3\2\2\2>?\7\f\2\2"+
+		"?@\7\3\2\2@A\7\f\2\2A\13\3\2\2\2\7\32\35(\63\65";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

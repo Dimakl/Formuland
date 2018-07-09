@@ -4,10 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FormulsListActivity"
+    tools:context=".FormulasListActivity"
     android:orientation="vertical">
 
-    <include layout="@layout/activity_main" android:id="@+id/common_topbar"/>
+    <include layout="@layout/activity_main"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_below="@id/toolbar"
+        android:background="@color/colorAccent3"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/section_tab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clipToPadding="false" />
+
+    </LinearLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/list"
