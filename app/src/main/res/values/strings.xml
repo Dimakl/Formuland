@@ -7,4 +7,8 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
+    <string name="answer">Ответ</string>
+    <string name="calculate">Вычислить</string>
+    <string name="formula">Formula</string>
+    <string name="argument">Введите число</string>
 </resources>

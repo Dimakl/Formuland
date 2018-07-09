@@ -4,13 +4,21 @@ import android.util.Log
 import org.antlr.v4.runtime.CharStreams
 import org.antlr.v4.runtime.CommonTokenStream
 import org.antlr.v4.runtime.tree.ErrorNode
+import team2.lksh.p.formuland.JsonDataProcessor
+import java.util.*
 import kotlin.math.*
 
-class FormulaAnalyzer(function: String) : BaseVisitor<Double?>() {
+//Get list of string representations of functions
+class FormulaAnalyzer(function: MutableList<String>, val dataProc : JsonDataProcessor) : BaseVisitor<Double?>() {
 
-    private val parserRootCtx = GenParser(CommonTokenStream(GenLexer(CharStreams.fromString(function)))).root()
-    private var variables = hashMapOf<String, Double>()
-    private val functions = hashMapOf<String, (List<Double>)-> Double>(
+    private val parserRootCtx = mutableListOf<GenParser.RootContext>()
+    private val rootCtxHashMap = mutableMapOf<String, GenParser.RootContext>()
+    init {
+        function.forEach {parserRootCtx.add(GenParser(CommonTokenStream(GenLexer(CharStreams.fromString(it)))).root())}
+        parserRootCtx.forEach { rootCtxHashMap[it.variable().ID().toString()] = it}
+    }
+    private var variables = mutableMapOf<String, Double>()
+    private val functions = hashMapOf<String,(List<Double>)-> Double>(
             "sin" to {i -> sin(i[0])},
             "cos" to {i -> cos(i[0])},
             "tan" to {i -> tan(i[0])},
@@ -18,19 +26,31 @@ class FormulaAnalyzer(function: String) : BaseVisitor<Double?>() {
             "sqrt" to {i -> sqrt(i[0])},
             "abs" to {i -> abs(i[0])},
             "min" to {i -> min(i[0], i[1])},
-            "max" to {i -> max(i[0], i[1])}
+            "max" to {i -> max(i[0], i[1])},
+            "log" to {i -> log(i[0], i[1])},
+            "log2" to {i -> log(i[0], 2.0)},
+            "log10" to {i -> log(i[0], 10.0)},
+            "ceil" to {i -> ceil(i[0])},
+            "floor" to {i -> floor(i[0])},
+            "randInt" to { _ -> Random().nextDouble()},
+            "randTo" to {arr -> Random().nextInt() % arr[0]}
     )
 
     private val errors = mutableListOf<String>()
 
-    fun run(hashMap: HashMap<String, Double>): String? {
+
+    //It's need for calculating value
+    //parameters:
+    //hashMap - map of pairs (name_of_variable, its_value)
+    //v - variable that we need to calculate
+    fun run(hashMap: MutableMap<String, Double>, v : String): String? {
         errors.clear()
         this.variables = hashMap
         return try {
-            visitRoot(parserRootCtx)?.toString() ?: errorsToString()
+            visitRoot(rootCtxHashMap[v])?.toString() ?: errorsToString()
         } catch (e : Exception) {
             errors.add(0,"Error: Wrong input.")
-            Log.d("PRS", "Wrong input")
+            Log.e("PRS", "Wrong input")
             errorsToString()
         }
     }
@@ -105,6 +125,15 @@ class FormulaAnalyzer(function: String) : BaseVisitor<Double?>() {
         errors.add("Error: Wrong input.")
         Log.e("PRS", "Wrong input")
         return super.visitErrorNode(node)
+    }
+
+    override fun visitCon(ctx: GenParser.ConContext?): Double? {
+        val tmp = dataProc.getConstValue(ctx?.ID().toString())
+        if (tmp == null) {
+            errors.add("Error: Constant doesn't exist.")
+            Log.e("PRS", "Constant doesn't exist.")
+        }
+        return tmp
     }
 
     private fun errorsToString() : String{

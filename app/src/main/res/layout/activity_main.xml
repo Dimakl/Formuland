@@ -8,48 +8,10 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorAccent"
-        android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        style="@style/MyStyle"
+        android:background="@color/colorAccent3"
+        app:titleTextColor="@color/white">
     </android.support.v7.widget.Toolbar>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorAccent"
-        android:orientation="horizontal"
-        android:layout_below="@id/toolbar">
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Математика"
-            android:id="@+id/math"
-            android:background="@color/colorAccent"
-            android:textColor="@color/white"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Физика"
-            android:id="@+id/physics"
-            android:background="@color/colorAccent"
-            android:textColor="@color/white"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Химия"
-            android:id="@+id/chemistry"
-            android:background="@color/colorAccent"
-            android:textColor="@color/white"/>
-
-    </LinearLayout>
-
-
-
 </RelativeLayout>

@@ -2,29 +2,277 @@
   {
     "name": "Сумма",
     "expression": [
-      "@a=@b+@c",
-      "@b=@a-@c",
-      "@c=@a-@b"
+      "@a@=@b@+@c@",
+      "@b@=@a@-@c@",
+      "@c@=@a@-@b@"
     ],
     "type": "math.base",
-    "image": "../images/"
+    "image": "sum4"
+  },
+  {
+    "name": "Вычитание",
+    "expression": [
+      "@a@=@b@-@c@",
+      "@b@=@a@+@c@",
+      "@c@=@b@-@a@"
+    ],
+    "type": "math.base",
+    "image": "min"
   },
   {
     "name": "Произведение",
     "expression": [
-      "@a=@b*@c",
-      "@b=@a/@c",
-      "@c=@a/@b"
+      "@a@=@b@*@c@",
+      "@b@=@a@/@c@",
+      "@c@=@a@/@b@"
     ],
     "type": "math.base",
-    "image": "../images/"
+    "image": "mult"
   },
   {
     "name": "Вычисление корня",
     "expression": [
-      "@a=_sqrt(@b)"
+      "@a@=_sqrt(@b@)"
     ],
     "type": "math.base",
-    "image": "../images/"
+    "image": "sqrt"
+  },
+  {
+    "name": "Площадь круга",
+    "expression": [
+      "@S@=&pi*@r@^2",
+      "@r@=_sqrt(@S@/&pi)"
+    ],
+    "type": "math.base",
+    "image": "circle_s"
+  },
+
+  {
+    "name": "Площадь круга",
+    "expression": [
+      "@l@=2*&pi*@R@",
+      "@R@=@l@/(2*&pi)"
+    ],
+    "type": "math.base",
+    "image": "circle_l"
+  },
+  {
+    "name": "Рандом",
+    "expression": [
+      "@r@=_randTo(@n@)"
+    ],
+    "type": "physics.base",
+    "image": "molecspeed"
+  },
+
+
+
+
+  {
+    "name": "II закон Ньютона",
+    "expression": [
+      "@F@=@m@*@a@",
+      "@a@=@F@/@m@",
+      "@m@=@F@/@a@"
+    ],
+    "type": "physics.base",
+    "image": "secondlawnewtonremastred"
+  },
+  {
+    "name": "Сила тяжести",
+    "expression": [
+      "@F@=@m@*&g",
+      "@m@=@F@/&g"
+    ],
+    "type": "physics.base",
+    "image": "ftremastred"
+  },
+  {
+    "name": "Сила трения скольжения",
+    "expression": [
+      "@F@=@mu@*@N@",
+      "@N@=@F@/@mu@",
+      "@mu@=@F@/@N@"
+    ],
+    "type": "physics.base",
+    "image": "ftrsremastred"
+  },
+  {
+    "name": "Сила всемирного тяготения",
+    "expression": [
+      "@F@=&G&(@m1@*@m2@)/(@r@*@r@)",
+      "@m1@=(@F@*@r@*@r@)/(&G*@m2@)",
+      "@m2@=(@F@*@r@*@r@)/(&G*@m1@)",
+      "@r@=_sqrt((&G*@m1@*@m2@)/@F@)"
+    ],
+    "type": "physics.base",
+    "image": "gravity"
+  },
+  {
+    "name": "Сила упругости",
+    "expression": [
+      "@F@=@k@*@dx@",
+      "@k@=@F@/@dx@",
+      "@dx@=@F@/@k@"
+    ],
+    "type": "physics.base",
+    "image": "fypr"
+  },
+  {
+    "name": "Момент силы",
+    "expression": [
+      "@M@=@F@*@d@",
+      "@F@=@M@/@d@",
+      "@d@=@M@/@F@"
+    ],
+    "type": "physics.base",
+    "image": "momfor"
+  },
+  {
+    "name": "Первая космическая скорость",
+    "expression": [
+      "@nu@=_sqrt((&G*@m@)/@R@)",
+      "@m@=(@nu@^2*@R@)/&G",
+      "@R@=(@m@*&G)/(@nu@*@nu@)"
+    ],
+    "type": "physics.base",
+    "image": "firstspacespeed"
+  },
+  {
+    "name": "Импульс",
+    "expression": [
+      "@p@=@m@*@nu@",
+      "@m@=@p@/@nu@",
+      "@nu@=@p@/@m@"
+    ],
+    "type": "physics.base",
+    "image": "impuls"
+  },
+  {
+    "name": "Импульс силы",
+    "expression": [
+      "@p@=@F@*@dt@",
+      "@F@=@p@/@dt@",
+      "@dt@=@p@/@F@"
+    ],
+    "type": "physics.base",
+    "image": "impulsforce"
+  },
+  {
+    "name": "Средняя квадратичная скорость",
+    "expression": [
+      "@nu@=_sqrt((3*&k*@T@)/@m0@)",
+      "@T@=(@m0@*@nu@^2)/(3*@k@)",
+      "@m0@=(3*@k@*@T@)/(@nu@^2)"
+    ],
+    "type": "physics.base",
+    "image": "molecspeed"
+  },
+
+
+
+  {
+    "name": "Количество вещества",
+    "expression": [
+      "@n@=@m@/@M@",
+      "@m@=@n@*@M@",
+      "@M@=@m@/@n@"
+    ],
+    "type": "chemistry.base",
+    "image": "vvo"
+  },
+  {
+    "name": "Плотность",
+    "expression": [
+      "@ro@=@m@/@V@",
+      "@m@=@ro@*@V@",
+      "@V@=@m@/@ro@"
+    ],
+    "type": "chemistry.base",
+    "image": "density"
+  },
+  {
+    "name": "Относительная плотность",
+    "expression": [
+      "@D@=@M@/@MM@",
+      "@M@=@D@*@MM@",
+      "@MM@=@M@/@D@"
+    ],
+    "type": "chemistry.base",
+    "image": "density2"
+  },
+  {
+    "name": "Скорость химической реакции",
+    "expression": [
+      "@nu@=@n@/(@V@*@t@)",
+      "@n@=@nu@*@V@*@t@",
+      "@V@=@n@/(@nu@*@t@)",
+      "@t@=@n@/(@nu@*@V@)"
+    ],
+    "type": "chemistry.base",
+    "image": "speedchem"
+  },
+  {
+    "name": "Формула Менделеева-Клапейрона",
+    "expression": [
+      "@p@=(@nu@*&R*@T@)/@V@",
+      "@V@=(@nu@*&R*@T@)/@p@",
+      "@nu@=(@p@*@V@)/(@T@*&R)",
+      "@T@=(@p@*@V@)/(@nu@*&R)"
+    ],
+    "type": "physics.base",
+    "image": "mendeleev"
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {
+    "name": "Мощность алфавита",
+    "expression": [
+      "@N@=2^@i@",
+      "@i@=_ceil(_log(@N@,2))"
+    ],
+    "type": "informatics.base",
+    "image": "alppower"
+  },
+  {
+    "name": "Информационный объем сообщения",
+    "expression": [
+      "@I@=@K@*@i@",
+      "@K@=@I@/@i@",
+      "@i@=@I@/@K@"
+    ],
+    "type": "informatics.base",
+    "image": "countinfo"
+  },
+  {
+    "name": "Количество сообщений",
+    "expression": [
+      "@Q@=@N@^@L@",
+      "@L@=_log(@Q@,@N@)",
+      "@N@=@Q@^(1/@L@)"
+    ],
+    "type": "informatics.base",
+    "image": "countmes"
+  },
+  {
+    "name": "Формула Хартли",
+    "expression": [
+      "@I@=_ceil(_log(@N@,2))",
+      "@N@=2^@I@"
+    ],
+    "type": "informatics.base",
+    "image": "hartley"
   }
 ]
