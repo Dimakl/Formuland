@@ -23,7 +23,7 @@ class FormulasListActivity : AppCompatActivity() {
 //    }
 
 
-    private val subjectList = listOf("Математика", "Физика", "Химия", "Информатика")//"Mathematics", "Physics", "Chemistry")
+    private val subjectList = listOf("Математика", "Физика", "Химия", "Информатика")
 
     var currentSubject = JsonTypes.mathBase
 
@@ -56,15 +56,6 @@ class FormulasListActivity : AppCompatActivity() {
     }
 
     fun onSectionClick(v : View) {
-//        when(v.subject.text) {
-//            subjectList[0] -> {
-//                list.adapter = FormulsAdapter(this, JsonTypes.mathBase)
-//                currentSubject = JsonTypes.mathBase}
-//            subjectList[1] -> {
-//                list.adapter = FormulsAdapter(this, JsonTypes.physicsBase)
-//                currentSubject = JsonTypes.physicsBase
-//            }
-//        }
 
         when(v.subject.text) {
             subjectList[0] -> {
