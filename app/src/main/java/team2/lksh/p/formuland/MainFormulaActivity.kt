@@ -73,7 +73,12 @@ class MainFormulaActivity : AppCompatActivity() {
             if (input.isBlank()) {
                 unknownVar = variable
             } else {
-                pares[variable] = input.toDouble()
+                try {
+                    pares[variable] = input.toDouble()
+                } catch (e : Exception) {
+                    answer.text = getString(R.string.wrong_input_error)
+                    return
+                }
             }
         }
 
