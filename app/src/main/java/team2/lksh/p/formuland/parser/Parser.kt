@@ -5,6 +5,7 @@ import org.antlr.v4.runtime.CharStreams
 import org.antlr.v4.runtime.CommonTokenStream
 import org.antlr.v4.runtime.tree.ErrorNode
 import team2.lksh.p.formuland.JsonDataProcessor
+import java.util.*
 import kotlin.math.*
 
 //Get list of string representations of functions
@@ -25,7 +26,13 @@ class FormulaAnalyzer(function: MutableList<String>, val dataProc : JsonDataProc
             "sqrt" to {i -> sqrt(i[0])},
             "abs" to {i -> abs(i[0])},
             "min" to {i -> min(i[0], i[1])},
-            "max" to {i -> max(i[0], i[1])}
+            "max" to {i -> max(i[0], i[1])},
+            "log" to {i -> log(i[0], i[1])},
+            "log2" to {i -> log2(i[0])},
+            "log10" to {i -> log10(i[0])},
+            "ceil" to {i -> ceil(i[0])},
+            "floor" to {i -> floor(i[0])},
+            "rand" to {i -> Random().nextDouble()}
     )
 
     private val errors = mutableListOf<String>()
