@@ -4,6 +4,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import android.util.Log
 import android.view.Menu
 import android.view.View
 import kotlinx.android.synthetic.main.activity_formul_list.*
@@ -15,16 +16,16 @@ import team2.lksh.p.formuland.adapters.SectionsCustomAdapter
 
 class FormulasListActivity : AppCompatActivity() {
 
-    enum class Subjects(value: String) {
-        math("Mathematics"),
-        physics("Physics"),
-        chemistry("Chemistry")
-    }
+//    enum class Subjects(value: String) {
+//        math("Mathematics"),
+//        physics("Physics"),
+//        chemistry("Chemistry")
+//    }
 
 
     private val subjectList = listOf("Mathematics", "Physics", "Chemistry")
 
-    var currentSubject = JsonTypes.MathBase.name
+    var currentSubject = JsonTypes.mathBase
 
     fun onFormulaClick(v : View) {
 
@@ -38,9 +39,11 @@ class FormulasListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_formul_list)
 
+        Log.i("pppppp", JsonTypes.mathBase)
+
         setSupportActionBar(toolbar)
         list.layoutManager = LinearLayoutManager(this)
-        list.adapter = FormulsAdapter(this, JsonTypes.MathBase.name)
+        list.adapter = FormulsAdapter(this, JsonTypes.mathBase)
 
         section_tab.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         section_tab.adapter = SectionsCustomAdapter(subjectList)
@@ -64,16 +67,16 @@ class FormulasListActivity : AppCompatActivity() {
 //        }
 
         when(v.subject.text) {
-            Subjects.math -> {
-                list.adapter = FormulsAdapter(this, JsonTypes.MathBase.name)
-                currentSubject = JsonTypes.MathBase.name}
-            Subjects.physics -> {
-                list.adapter = FormulsAdapter(this, JsonTypes.PhysicsBase.name)
-                currentSubject = JsonTypes.PhysicsBase.name
+            subjectList[0] -> {
+                list.adapter = FormulsAdapter(this, JsonTypes.mathBase)
+                currentSubject = JsonTypes.mathBase}
+            subjectList[1] -> {
+                list.adapter = FormulsAdapter(this, JsonTypes.physicsBase)
+                currentSubject = JsonTypes.physicsBase
             }
-            Subjects.chemistry -> {
-                list.adapter = FormulsAdapter(this, JsonTypes.ChemistryBase.name)
-                currentSubject = JsonTypes.ChemistryBase.name
+            subjectList[2] -> {
+                list.adapter = FormulsAdapter(this, JsonTypes.chemistryBase)
+                currentSubject = JsonTypes.chemistryBase
             }
         }
     }

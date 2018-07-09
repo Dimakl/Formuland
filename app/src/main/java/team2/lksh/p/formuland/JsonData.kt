@@ -106,9 +106,23 @@ class JsonDataProcessor(private val context: Context) {
     }
 }
 
-enum class JsonTypes(value: String) {
-    MathBase("math.base"),
-    MathGeometry("math.geometry"),
-    PhysicsBase("physics.base"),
-    ChemistryBase("chemistry.base")
+class JsonTypes {
+
+    companion object {
+        // const String data types
+        const val mathBase = "math.base"
+        const val mathGeometry = "math.geometry"
+
+        const val physicsBase = "physics.base"
+
+        const val chemistryBase = "chemistry.base"
+    }
+
 }
+
+//enum class JsonTypes(value: String) {
+//    mathBase("math.base"),
+//    MathG("math.geometry"),
+//    physicsBase("physics.base"),
+//    chemistryBase("chemistry.base")
+//}
